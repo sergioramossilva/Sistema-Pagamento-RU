@@ -1,3 +1,6 @@
+package br.edu.utfpr.cm.utils;
+
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
