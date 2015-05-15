@@ -1,0 +1,8 @@
+Para carregar o formatter:
+window->preferences->java->code style->formatter->import
+depois deixar selecionado o formatter que foi criado (meu_formater), ok e pronto.
+
+PS:É, ficou com um t só, mas não da tempo de arrumar agora. 
+[]s
+PS:Se alguém quiser propor alguma alteração, vale a pena olhar o formatter e o
+clean up.
