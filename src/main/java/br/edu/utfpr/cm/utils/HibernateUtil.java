@@ -1,4 +1,4 @@
-package br.edu.utfpr.cm.tsi.openbibliotek.hibernate;
+package br.edu.utfpr.cm.utils;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
