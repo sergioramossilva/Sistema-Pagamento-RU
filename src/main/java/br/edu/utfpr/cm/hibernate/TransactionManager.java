@@ -1,4 +1,4 @@
-package br.edu.utfpr.cm.utils;
+package br.edu.utfpr.cm.hibernate;
 
 
 import org.hibernate.Session;

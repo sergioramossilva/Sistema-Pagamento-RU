@@ -1,9 +1,8 @@
-package br.edu.utfpr.cm.utils;
+package br.edu.utfpr.cm.hibernate;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
@@ -22,7 +21,7 @@ import org.hibernate.service.ServiceRegistry;
 public class HibernateUtil {
 
     private static SessionFactory sessionFactory;
-    private static StandardServiceRegistry serviceRegistry;
+    private static ServiceRegistry serviceRegistry;
     private static Configuration config;
     private static final ThreadLocal<Session> sessionThread;
     private static Session session;
