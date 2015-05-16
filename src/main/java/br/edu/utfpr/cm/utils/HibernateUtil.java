@@ -24,14 +24,15 @@ public class HibernateUtil {
     private static SessionFactory sessionFactory;
     private static StandardServiceRegistry serviceRegistry;
     private static Configuration config;
-    private static final ThreadLocal sessionThread;
+    private static final ThreadLocal<Session> sessionThread;
     private static Session session;
 
     static {
 
-        sessionThread = new ThreadLocal();
+        sessionThread = new ThreadLocal<Session>();
         try {
-            iniciarHibernate();
+           
+        	iniciarHibernate();
             System.out.println("Hibernate iniciado com sucesso!");
         } catch (HibernateException ex) {
             System.err.println("Falha ao iniciar Hibernate!" + ex);
@@ -110,7 +111,7 @@ public class HibernateUtil {
      * Limpa a Session corrente.
      */
     protected static void clearSession() {
-        Session s = HibernateUtil.openSession();
+        Session s = openSession();
         s.clear();
     }
 
