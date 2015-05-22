@@ -1,6 +1,5 @@
-# ProjetoIntegrador
-Uma nova forma de pagamento de refeições para o restaurante universitário
-
+# ProjetoIntegrador 
+Uma nova forma de pagamento de refeiÃ§Ãµes para o restaurante universitÃ¡rio
 
 --------------------------------------------------------------------
 # Ferramentas utilizadas:
@@ -33,10 +32,10 @@ DAO
 
 
 --------------------------------------------------------------------
-# Outras informações:
+# Outras informaÃ§Ãµes:
 
 IP LDAP: 172.17.2.4
 
-Usuário BD: root
+UsuÃ¡rio BD: root
 
 Senha BD: root
