@@ -22,8 +22,8 @@
 		</properties>
 
 		<!-- Entidades mapeadas -->
-		<class>br.edu.utfpr.cm.pi.Cargo</class>
-		<class>br.edu.utfpr.cm.pi.Funcionario</class>
+		<class>br.edu.utfpr.cm.pi.beans.Cargo</class>
+		<class>br.edu.utfpr.cm.pi.beans.Funcionario</class>
 
 	</persistence-unit>
 </persistence>
