@@ -1,7 +1,6 @@
 # ProjetoIntegrador 
 Uma nova forma de pagamento de refeições para o restaurante universitário
 
-Status: https://travis-ci.org/sergioramossilva/Sistema-Pagamento-RU.svg?branch=master
 --------------------------------------------------------------------
 # Ferramentas utilizadas:
 
