@@ -21,9 +21,5 @@
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 
-		<!-- Entidades mapeadas -->
-		<class>br.edu.utfpr.cm.pi.beans.Cargo</class>
-		<class>br.edu.utfpr.cm.pi.beans.Funcionario</class>
-
 	</persistence-unit>
 </persistence>
