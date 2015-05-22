@@ -1,12 +1,42 @@
-# ProjetoIntegrador-UTFPR-2015
-RU
+# ProjetoIntegrador
+Uma nova forma de pagamento de refeições para o restaurante universitário
 
-Ide:eclipse ee
-Linguagem:java 8
-ORM:Hibernate
-sgbd:Mysql
-Dao:Genérico
-mvc:true
-tomcat:8.22
 
-ip ldap:172.17.2.4
+--------------------------------------------------------------------
+# Ferramentas utilizadas:
+
+Linguagem: Java (JDK1.8_0.45)
+
+IDE: Eclipse Java EE (Luna)
+
+SGBD: MySQL 5.6
+
+ORM: Hibernate 4.3
+
+Servidor web: Apache Tomcat 8
+
+JSF
+
+Log4J
+
+JUnit
+
+LDAP
+
+
+--------------------------------------------------------------------
+# Design Pattern:
+
+MVC
+
+DAO
+
+
+--------------------------------------------------------------------
+# Outras informações:
+
+IP LDAP: 172.17.2.4
+
+Usuário BD: root
+
+Senha BD: root
