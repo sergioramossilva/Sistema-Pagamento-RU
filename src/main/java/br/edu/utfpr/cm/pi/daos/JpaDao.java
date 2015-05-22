@@ -1,6 +1,5 @@
-package br.edu.utfpr.cm.pi.dao;
+package br.edu.utfpr.cm.pi.daos;
 
-import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -17,13 +16,8 @@ public class JpaDao<T, I> implements Dao<T, I> {
 	protected EntityManager em;
 	protected Class<T> entityClass;
 
-	@SuppressWarnings("unchecked")
-	public JpaDao() {
-
-		ParameterizedType genericSuperClass = (ParameterizedType) this
-				.getClass().getGenericSuperclass();
-		this.entityClass = (Class<T>) genericSuperClass
-				.getActualTypeArguments()[0];
+	public JpaDao(Class<T> entityClass) {
+		this.entityClass = entityClass;
 	}
 
 	@Override
@@ -134,4 +128,5 @@ public class JpaDao<T, I> implements Dao<T, I> {
 		return results;
 
 	}
+	
 }
