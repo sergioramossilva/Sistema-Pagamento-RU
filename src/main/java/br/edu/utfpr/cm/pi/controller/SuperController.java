@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "SuperControlador", urlPatterns = { "/SuperController" })
 public abstract class SuperController extends HttpServlet {
 
-	private static final long serialVersionUID = 3110880441343837503L;
+	private static final long serialVersionUID = 1L;
 
 	public abstract String acaoPadrao(HttpServletRequest request);
 
