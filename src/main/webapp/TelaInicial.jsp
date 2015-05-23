@@ -55,13 +55,12 @@
 									id="exampleInputPassword3" placeholder="Senha">
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox"><font
-									color="white">Salvar Dados</font>
+								<label> <input type="checkbox"><font color="white">Salvar Dados</font>
 								</label>
 							</div>
 							<button type="submit" class="btn btn-default">Entrar</button>
 						</form></li>
-				</ul>
+				</ul>			
 			</div>
 		</div>
 	</nav>
@@ -89,32 +88,10 @@
 					<li><a href="">Another nav item</a></li>
 				</ul>
 			</div>
-			
-
-		</div>
-		<div class="col-lg-3 col-offset-15 centered">
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<h1 class="page-header">Dashboard</h1>
-				<form class="form-inline">
-					<div class="form-group">
-						<label class="sr-only" for="exampleInputAmount">Amount (in
-							dollars)</label>
-						<div class="input-group">
-							<div class="input-group-addon">$</div>
-							<input type="text" class="form-control" id="exampleInputAmount"
-								placeholder="Amount">
-							<div class="input-group-addon">.00</div>
-						</div>
-					</div>
-					<button type="submit" class="btn btn-primary">Transfer
-						cash</button>
-				</form>
 
-
-
-
-			</div>
-
-	</div>
+				
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
@@ -128,5 +105,5 @@
 	<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 
 
-
+	
 </body>
