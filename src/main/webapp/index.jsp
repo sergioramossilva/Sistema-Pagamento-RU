@@ -55,15 +55,12 @@
 									id="exampleInputPassword3" placeholder="Senha">
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox">Salvar Dados
+								<label> <input type="checkbox"><font color="white">Salvar Dados</font>
 								</label>
 							</div>
 							<button type="submit" class="btn btn-default">Sign in</button>
 						</form></li>
-				</ul>
-				<form class="navbar-form navbar-right">
-					<input class="form-control" placeholder="Search..." type="text">
-				</form>
+				</ul>			
 			</div>
 		</div>
 	</nav>
@@ -273,12 +270,5 @@
 	<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 
 
-	<svg
-		style="visibility: hidden; position: absolute; top: -100%; left: -100%;"
-		preserveAspectRatio="none" viewBox="0 0 200 200" height="200"
-		width="200">
-		<defs></defs>
-		<text
-			style="font-weight:bold;font-size:10pt;font-family:Arial, Helvetica, Open Sans, sans-serif;dominant-baseline:middle"
-			y="10" x="0">200x200</text></svg>
+	
 </body>
