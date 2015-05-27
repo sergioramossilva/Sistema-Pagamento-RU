@@ -8,6 +8,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+import br.edu.utfpr.cm.pi.beans.Cargo;
 import br.edu.utfpr.cm.pi.interfaces.Dao;
 import br.edu.utfpr.cm.pi.persistence.PersistenceManager;
 
@@ -61,11 +62,10 @@ public class JpaDao<T, I> implements Dao<T, I> {
 
 	}
 
-	@Override
-	public void delete(T objeto) {
+	public void delete(Class classe, long id) {
 
 		try {
-
+			Object objeto = em.find(classe, id);
 			em = PersistenceManager.getEntityManager();
 			em.getTransaction().begin();
 			em.remove(objeto);
@@ -79,11 +79,9 @@ public class JpaDao<T, I> implements Dao<T, I> {
 
 			em.close();
 		}
-
 	}
-
-	@Override
-	public T findById(I id) {
+	
+	public T findById(Class classe, long id) {
 
 		T objeto = null;
 
@@ -127,6 +125,18 @@ public class JpaDao<T, I> implements Dao<T, I> {
 
 		return results;
 
+	}
+
+	@Override
+	public void delete(T objeto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public T findById(T objeto, I id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

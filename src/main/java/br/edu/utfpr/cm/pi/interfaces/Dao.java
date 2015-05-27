@@ -2,6 +2,10 @@ package br.edu.utfpr.cm.pi.interfaces;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
+import br.edu.utfpr.cm.pi.daos.JpaDao;
+
 /**
  * Interface genérica destinada à persistência de objetos.
  * 
@@ -44,12 +48,13 @@ public interface Dao<T, I> {
 	 *            - Identificador do objeto a ser pesquisado.
 	 * @return <T>T<T> - Objeto encontrado.
 	 */
-	public T findById(I id);
+	public T findById(T objeto, I id);
 
 	/**
 	 * Obtém a lista de objetos do tipo <T>T<T>.
 	 *
 	 * @return Uma lista de objetos.
 	 */
-	public List<T> getAll();
+	
+	 public List<T> getAll();
 }
