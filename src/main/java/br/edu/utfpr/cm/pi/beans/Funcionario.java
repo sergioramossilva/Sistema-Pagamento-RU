@@ -26,7 +26,7 @@ public class Funcionario extends BasicData implements Serializable {
     private String cpf;
 
     @Temporal(TemporalType.DATE)
-    private Calendar dtCadastro;
+    private Calendar dataCadastro;
     private boolean ativo;
     private String login;
     private String senha;
@@ -80,18 +80,18 @@ public class Funcionario extends BasicData implements Serializable {
     }
 
     /**
-     * @return the dtCadastro
+     * @return the dataCadastro
      */
-    public Calendar getDtCadastro() {
-        return dtCadastro;
+    public Calendar getDataCadastro() {
+        return dataCadastro;
     }
 
     /**
-     * @param dtCadastro
+     * @param dataCadastro
      *            the dtCadastro to set
      */
-    public void setDtCadastro(Calendar dtCadastro) {
-        this.dtCadastro = dtCadastro;
+    public void setDataCadastro(Calendar dtCadastro) {
+        this.dataCadastro = dtCadastro;
     }
 
     /**
@@ -152,7 +152,7 @@ public class Funcionario extends BasicData implements Serializable {
         result = prime * result + ((cargo == null) ? 0 : cargo.hashCode());
         result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
         result = prime * result
-                + ((dtCadastro == null) ? 0 : dtCadastro.hashCode());
+                + ((dataCadastro == null) ? 0 : dataCadastro.hashCode());
         result = prime * result + ((login == null) ? 0 : login.hashCode());
         result = prime * result + ((nome == null) ? 0 : nome.hashCode());
         result = prime * result + ((senha == null) ? 0 : senha.hashCode());
@@ -193,11 +193,11 @@ public class Funcionario extends BasicData implements Serializable {
         } else if (!cpf.equals(other.cpf)) {
             return false;
         }
-        if (dtCadastro == null) {
-            if (other.dtCadastro != null) {
+        if (dataCadastro == null) {
+            if (other.dataCadastro != null) {
                 return false;
             }
-        } else if (!dtCadastro.equals(other.dtCadastro)) {
+        } else if (!dataCadastro.equals(other.dataCadastro)) {
             return false;
         }
         if (login == null) {
@@ -233,7 +233,7 @@ public class Funcionario extends BasicData implements Serializable {
     public String toString() {
         return "Funcionario [id=" + this.getId() + "cargo=" + cargo.getNome()
                 + ", nome=" + nome + ", cpf=" + cpf + ", dtCadastro="
-                + dtCadastro + ", ativo=" + ativo + ", login=" + login
+                + dataCadastro + ", ativo=" + ativo + ", login=" + login
                 + ", senha=" + senha + "]";
     }
 
