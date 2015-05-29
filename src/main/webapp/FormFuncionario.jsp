@@ -41,7 +41,7 @@
 
 			<p class="lead">Sistema Pagamento RU</p>
 		<form id="cadFuncionario" class="form-horizontal" role="form"
-		method="post" action="controlador?acao=salvar">
+				method="post" action="controlador?acao=salvar">
 				<input type="hidden" name="acao" value="salvar" />
 				<input type="hidden" name="id" value="${fun.id}" />
 
