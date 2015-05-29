@@ -2,8 +2,6 @@ package br.edu.utfpr.cm.pi.daos;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-
 /**
  * Interface genérica destinada à persistência de objetos.
  * 

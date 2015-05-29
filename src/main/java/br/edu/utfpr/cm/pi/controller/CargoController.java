@@ -17,7 +17,11 @@ import br.edu.utfpr.cm.pi.daos.CargoDao;
 @WebServlet(name = "CargoController", urlPatterns = {"/cadastros/cargo/controlador"})
 public class CargoController extends SuperController{
 
-	   private CargoDao dao;
+	   /**
+     * 
+     */
+    private static final long serialVersionUID = -2370921254016052104L;
+    private CargoDao dao;
 	   
 	   public CargoController() {
 		dao = new CargoDao();
@@ -45,14 +49,14 @@ public class CargoController extends SuperController{
     public String excluir(HttpServletRequest request){
         Cargo cargo = new Cargo();
         Long id = Long.parseLong(request.getParameter("id"));
-        dao.delete(cargo.getClass(), id);
+        dao.delete(id);
         return acaoPadrao(request);
     }
     
     public String alterar(HttpServletRequest request){
-        Cargo cargo = new Cargo();
+        
         Long id = Long.parseLong(request.getParameter("id"));
-        Cargo e = (Cargo) dao.findById(cargo.getClass(), id);
+        Cargo e = (Cargo) dao.findById(id);
         request.setAttribute("car", e);
         return "form.jsp";
     }
