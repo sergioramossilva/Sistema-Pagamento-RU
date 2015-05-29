@@ -71,11 +71,11 @@
 				<ul class="nav nav-sidebar">
 					<li class="active"><a href="#">Overview <span
 							class="sr-only">(current)</span></a></li>
-					<li><a href="FormFuncionario">Cadastro de Funcionário</a></li>
+					<li><a href="/cadastros/funcionario/controlador">Cadastro de Funcionário</a></li>
 					<li><a href="#">Cadastro de Cargo</a></li>		
 				</ul>
 				
-				</div>
+					</div>
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<h1 class="page-header">Dashboard</h1>
 
