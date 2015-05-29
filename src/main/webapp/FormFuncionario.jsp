@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="br.edu.utfpr.cm.pi.daos.FuncionarioDao" %>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -22,25 +23,7 @@
 
 <script src="Jquery.js" type="text/javascript"></script>
 <script src="../../css/Jquery.validade.js" type="text/javascript"></script>
-<script>
-        $(document).ready(function(){
-            $(#cadFuncionario).validade({
-                rules:{ nome: "requided",
-                        email: required: true
-                               email: true
-                required:"Digite o seu nome", minlength:"O nome deve conter pelo menos 2 letras"}
-            }, 
-            messages:{
-                nome:"Este campo não pode ser vazio!!",
-                email:{
-                    required:"Este campo é obrigatorio"
-                    email: "Validadação Email"
-                }
-            }
-       
-        });
-    });
-            </script>
+
 </head>
 
 <body>
@@ -57,12 +40,10 @@
 			</div>
 
 			<p class="lead">Sistema Pagamento RU</p>
-
-			<form id="cadFuncionario" class="form-horizontal" role="form"
-				method="post" action="controlador?acao=salvar">
-
-				<input type="hidden" name="acao" value="salvar" /> <input
-					type="hidden" name="id" value="${fun.id}" />
+		<form id="cadFuncionario" class="form-horizontal" role="form"
+		method="post" action="controlador?acao=salvar">
+				<input type="hidden" name="acao" value="salvar" />
+				<input type="hidden" name="id" value="${fun.id}" />
 
 
 				<div class="form-group">
@@ -80,7 +61,6 @@
 							value="${fun.cpf}" placeholder="Informe seu Cpf">
 					</div>
 				</div>
-
 
 				<div class="form-group">
 					<label for="login" class="col-sm-2 control-label">Login</label>
@@ -101,9 +81,9 @@
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-5">
 						<button type="submit" class="btn btn-success">Salvar</button>
-						<a href="" class="btn btn-default">Cancelar</a> <a
-							href="/ExemploSala/cadastros/funcionario/controlador"
-							class="btn btn-default">Listar Funcionarios</a>
+						<a href="" class="btn btn-default">Cancelar</a> 
+						<a href="/cadastros/funcionario/controlador"
+						class="btn btn-default">Listar Funcionarios</a>
 					</div>
 				</div>
 
