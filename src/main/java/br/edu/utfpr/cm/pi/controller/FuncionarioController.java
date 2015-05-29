@@ -15,7 +15,9 @@ import br.edu.utfpr.cm.pi.daos.FuncionarioDao;
 @WebServlet(name = "FuncionarioController", urlPatterns = {"/cadastros/funcionario/controlador"})
 public class FuncionarioController extends SuperController{
 
-	   private FuncionarioDao dao;
+	private static final long serialVersionUID = 1L;
+	
+	private FuncionarioDao dao;
 	   
 	   public FuncionarioController() {
 		dao = new FuncionarioDao();
@@ -23,7 +25,7 @@ public class FuncionarioController extends SuperController{
 	
     @Override
     public String acaoPadrao(HttpServletRequest request) {
-        List funcionarios = dao.getAll();
+        List<Funcionario> funcionarios = dao.getAll();
         request.setAttribute("lista", funcionarios);
         return "lista.jsp";
     }
@@ -43,17 +45,18 @@ public class FuncionarioController extends SuperController{
     public String excluir(HttpServletRequest request){
     	Funcionario funcionario = new Funcionario();
         Long id = Long.parseLong(request.getParameter("id"));
-        dao.delete(funcionario.getClass(), id);
+        funcionario.setId(id);
+        dao.delete(funcionario);
         return acaoPadrao(request);
     }
     
     public String alterar(HttpServletRequest request){
-    	Funcionario funcionario = new Funcionario();
+    	Funcionario fun = new Funcionario();
         Long id = Long.parseLong(request.getParameter("id"));
-        Funcionario fun = (Funcionario) dao.findById(funcionario.getClass(), id);
+        fun = dao.findById(id);
+//        Funcionario fun = (Funcionario) dao.findById(funcionario.getClass(), id);
         request.setAttribute("car", fun);
         return "form.jsp";
     }
     
 }
-
