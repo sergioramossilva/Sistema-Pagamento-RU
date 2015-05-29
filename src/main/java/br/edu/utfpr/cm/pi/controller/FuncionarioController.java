@@ -31,8 +31,8 @@ public class FuncionarioController extends SuperController{
     }
     
     public String incluir(HttpServletRequest request) {
-       // Funcionario funcionario = new Funcionario();
-        //request.setAttribute("fun", funcionario);
+        Funcionario funcionario = new Funcionario();
+        request.setAttribute("fun", funcionario);
         return "form.jsp";
     }
     

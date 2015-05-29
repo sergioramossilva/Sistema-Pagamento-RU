@@ -50,7 +50,7 @@
 					<label for="nome" class="col-sm-2 control-label">Nome</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" id="nome" name="nome"
-							value="${fun.nome}" placeholder="Informe um nome">
+							value="${fun.getNome}" placeholder="Informe um nome">
 					</div>
 				</div>
 
@@ -58,7 +58,7 @@
 					<label for="cpf" class="col-sm-2 control-label">CPF</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" id="cpf" name="nome"
-							value="${fun.cpf}" placeholder="Informe seu Cpf">
+							value="${fun.getCpf}" placeholder="Informe seu Cpf">
 					</div>
 				</div>
 
@@ -66,7 +66,7 @@
 					<label for="login" class="col-sm-2 control-label">Login</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" id="login" name="login"
-							value="${fun.login}" placeholder="Informe seu Login">
+							value="${fun.Getlogin}" placeholder="Informe seu Login">
 					</div>
 				</div>
 
@@ -74,7 +74,7 @@
 					<label for="senha" class="col-sm-2 control-label">Senha</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" id="senha" name="senha"
-							value="${fun.senha}" placeholder="Informe sua Senha">
+							value="${fun.Getsenha}" placeholder="Informe sua Senha">
 					</div>
 				</div>
 
