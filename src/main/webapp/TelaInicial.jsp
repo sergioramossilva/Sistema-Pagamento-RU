@@ -71,8 +71,8 @@
 				<ul class="nav nav-sidebar">
 					<li class="active"><a href="#">Overview <span
 							class="sr-only">(current)</span></a></li>
-					<li><a href="/cadastros/funcionario/controlador">Cadastro de Funcionário</a></li>
-					<li><a href="#">Cadastro de Cargo</a></li>		
+					<li><a href="/FormFuncionario.jsp">Cadastro de Funcionário</a></li>
+					<li><a href="/FormCargo.jsp">Cadastro de Cargo</a></li>		
 				</ul>
 				
 					</div>
