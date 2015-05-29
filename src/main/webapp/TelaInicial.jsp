@@ -71,7 +71,7 @@
 				<ul class="nav nav-sidebar">
 					<li class="active"><a href="#">Overview <span
 							class="sr-only">(current)</span></a></li>
-					<li><a href="#">Cadastro de Funcionário</a></li>
+					<li><a href="FormFuncionario">Cadastro de Funcionário</a></li>
 					<li><a href="#">Cadastro de Cargo</a></li>		
 				</ul>
 				
