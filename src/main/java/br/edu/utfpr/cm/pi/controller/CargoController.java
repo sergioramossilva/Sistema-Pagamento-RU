@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
+
 import br.edu.utfpr.cm.pi.beans.Cargo;
 import br.edu.utfpr.cm.pi.daos.CargoDao;
 
@@ -29,7 +30,7 @@ public class CargoController extends SuperController{
 	
     @Override
     public String acaoPadrao(HttpServletRequest request) {
-        List cargos = dao.getAll();
+        List<Cargo> cargos = dao.getAll();
         request.setAttribute("lista", cargos);
         return "lista.jsp";
     }
@@ -49,15 +50,16 @@ public class CargoController extends SuperController{
     public String excluir(HttpServletRequest request){
         Cargo cargo = new Cargo();
         Long id = Long.parseLong(request.getParameter("id"));
-        dao.delete(id);
+        cargo.setId(id);
+        dao.delete(cargo);
         return acaoPadrao(request);
     }
     
     public String alterar(HttpServletRequest request){
-        
+        Cargo cargo = new Cargo();
         Long id = Long.parseLong(request.getParameter("id"));
-        Cargo e = (Cargo) dao.findById(id);
-        request.setAttribute("car", e);
+        cargo = dao.findById(id);
+        request.setAttribute("car", cargo);
         return "form.jsp";
     }
     
