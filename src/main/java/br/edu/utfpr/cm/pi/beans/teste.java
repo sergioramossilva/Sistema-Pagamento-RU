@@ -12,7 +12,10 @@ public class teste {
 		
 		CargoDao dao = new CargoDao();
 		
+		System.out.println("Salvando... ");
 		dao.save(cargo);
+		
+		
 		
 		
 	}

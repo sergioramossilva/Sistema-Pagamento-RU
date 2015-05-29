@@ -9,6 +9,7 @@ public class PersistenceManager {
 	private static EntityManagerFactory entityManagerFactory;
 	private static ThreadLocal<EntityManager> threadLocal;
 
+// Bloco estático - Permite que a EntityManagerFactory inicie apenas uma vez.
 	static {
 
 		threadLocal = new ThreadLocal<EntityManager>();
