@@ -38,7 +38,7 @@ public class CargoController extends SuperController{
     public String incluir(HttpServletRequest request) {
         Cargo cargo = new Cargo();
         request.setAttribute("car", cargo);
-        return "form.jsp";
+        return "FormCargo.jsp";
     }
     
     public String salvar(HttpServletRequest request) {
@@ -60,7 +60,7 @@ public class CargoController extends SuperController{
         Long id = Long.parseLong(request.getParameter("id"));
         cargo = dao.findById(id);
         request.setAttribute("car", cargo);
-        return "form.jsp";
+        return "FormCargo.jsp";
     }
     
 }

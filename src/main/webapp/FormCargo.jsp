@@ -40,10 +40,10 @@
 			</div>
 
 			<p class="lead">Sistema Pagamento RU</p>
-		<form id="cadCargo" class="form-horizontal" role="form"
-		method="post" action="controlador?acao">
+		<form id="cadFuncionario" class="form-horizontal" role="form"
+		method="post" action="controlador?acao=salvar">
 				<input type="hidden" name="acao" value="salvar" />
-				<input type="hidden" name="id" value="${cargo.id}" />
+				<input type="hidden" name="id" value="${car.id}" />
 
 
 				<div class="form-group">

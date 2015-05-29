@@ -4,12 +4,31 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1">
 	<display-name>sistema_pagamento_ru</display-name>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
-	</welcome-file-list>
+ <servlet>
+        <servlet-name>SuperController</servlet-name>
+        <servlet-class>br.edu.utfpr.cm.pi.controller.SuperController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FuncionarioControler</servlet-name>
+        <servlet-class>br.edu.utfpr.cm.pi.controller.FuncionarioController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CargoController</servlet-name>
+        <servlet-class>br.edu.utfpr.cm.pi.controller.CargoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SuperControlador</servlet-name>
+        <url-pattern>/SuperControlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FuncionarioControlador</servlet-name>
+        <url-pattern>/FuncionarioControlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CargoControlador</servlet-name>
+        <url-pattern>/CargoControlador</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
 </web-app>
