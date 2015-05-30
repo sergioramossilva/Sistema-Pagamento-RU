@@ -17,6 +17,8 @@ import br.edu.utfpr.cm.pi.daos.CargoDao;
 /**
  *
  * @author raphael
+ * 
+ * 
  */
 @WebServlet(name = "CargoController", urlPatterns = {"/cadastros/cargo/controlador"})
 public class CargoController extends SuperController{
