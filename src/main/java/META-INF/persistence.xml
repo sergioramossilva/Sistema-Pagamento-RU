@@ -16,6 +16,7 @@
 
 		<properties>
 			<!-- Dados da conexão -->
+			
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/sistemaPagamentoRU" />
 			<property name="javax.persistence.jdbc.user" value="root" />
