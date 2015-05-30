@@ -1,6 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="br.edu.utfpr.cm.pi.daos.CargoDao" %>
+<%@ page import="br.edu.utfpr.cm.pi.beans.Cargo" %>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -31,7 +32,6 @@
 	<!-- Wrap all page content here -->
 	<div id="wrap">
 
-
 		<!-- Begin page content -->
 		<div class="container">
 
@@ -40,40 +40,36 @@
 			</div>
 
 			<p class="lead">Sistema Pagamento RU</p>
-		<form id="cadFuncionario" class="form-horizontal" role="form"
-		method="post" action="controlador?acao=salvar">
+			<form id="cadCargo" class="form-horizontal" role="form"
+			method="post" action="CargoController?acao=salvar">
 				<input type="hidden" name="acao" value="salvar" />
-				<input type="hidden" name="id" value="${car.id}" />
-
+				<input type="hidden" name="id" value="${cargo.id}" />
 
 				<div class="form-group">
 					<label for="nome" class="col-sm-2 control-label">Nome</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" id="nome" name="nome"
-							value="${car.nome}" placeholder="Informe um nome">
+							value="${cargo.nome}" placeholder="Informe um nome">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<label for="nome" class="col-sm-2 control-label">Admin</label>
 					<div class="col-sm-2">
-						<input type="checkbox" class="form-control" id="admin" name="admin">
+						<input type="checkbox" class="form-control" id="admin" name="admin" value="${cargo.admin}">
 					</div>
 				</div>	
-			
-
-				
+							
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-5">
 						<button type="submit" class="btn btn-success">Salvar</button>
 						<a href="" class="btn btn-default">Cancelar</a> 
-						<a href="/cadastros/funcionario/controlador"
+						<a href="lista.jsp"
 						class="btn btn-default">Listar Cargos</a>
 					</div>
 				</div>
 
 			</form>
-
 
 
 			<div id="footer">

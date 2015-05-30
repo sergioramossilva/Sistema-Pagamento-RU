@@ -9,7 +9,7 @@
         <servlet-class>br.edu.utfpr.cm.pi.controller.SuperController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>FuncionarioControler</servlet-name>
+        <servlet-name>FuncionarioController</servlet-name>
         <servlet-class>br.edu.utfpr.cm.pi.controller.FuncionarioController</servlet-class>
     </servlet>
     <servlet>
@@ -17,16 +17,16 @@
         <servlet-class>br.edu.utfpr.cm.pi.controller.CargoController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>SuperControlador</servlet-name>
-        <url-pattern>/SuperControlador</url-pattern>
+        <servlet-name>SuperController</servlet-name>
+        <url-pattern>/SuperController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>FuncionarioControlador</servlet-name>
-        <url-pattern>/FuncionarioControlador</url-pattern>
+        <servlet-name>FuncionarioController</servlet-name>
+        <url-pattern>/FuncionarioController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CargoControlador</servlet-name>
-        <url-pattern>/CargoControlador</url-pattern>
+        <servlet-name>CargoController</servlet-name>
+        <url-pattern>/CargoController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>60</session-timeout>

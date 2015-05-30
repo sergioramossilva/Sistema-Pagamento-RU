@@ -6,9 +6,9 @@ import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
-
 import br.edu.utfpr.cm.pi.beans.Cargo;
 import br.edu.utfpr.cm.pi.daos.CargoDao;
+import org.apache.jasper.runtime.JspRuntimeLibrary;
 
 
 /**
@@ -37,12 +37,13 @@ public class CargoController extends SuperController{
     
     public String incluir(HttpServletRequest request) {
         Cargo cargo = new Cargo();
-        request.setAttribute("car", cargo);
+        request.setAttribute("cargo", cargo);
         return "FormCargo.jsp";
     }
     
     public String salvar(HttpServletRequest request) {
         Cargo cargo = new Cargo();
+        JspRuntimeLibrary.introspect(cargo, request);
         dao.save(cargo);
        return acaoPadrao(request);
     }
@@ -59,7 +60,7 @@ public class CargoController extends SuperController{
         Cargo cargo = new Cargo();
         Long id = Long.parseLong(request.getParameter("id"));
         cargo = dao.findById(id);
-        request.setAttribute("car", cargo);
+        request.setAttribute("cargo", cargo);
         return "FormCargo.jsp";
     }
     
