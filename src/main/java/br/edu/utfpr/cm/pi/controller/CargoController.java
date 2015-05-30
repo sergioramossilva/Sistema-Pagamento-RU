@@ -6,9 +6,9 @@ import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
+
 import br.edu.utfpr.cm.pi.beans.Cargo;
 import br.edu.utfpr.cm.pi.daos.CargoDao;
-import org.apache.jasper.runtime.JspRuntimeLibrary;
 
 
 /**
@@ -43,7 +43,6 @@ public class CargoController extends SuperController{
     
     public String salvar(HttpServletRequest request) {
         Cargo cargo = new Cargo();
-        JspRuntimeLibrary.introspect(cargo, request);
         dao.save(cargo);
        return acaoPadrao(request);
     }
