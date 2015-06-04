@@ -12,117 +12,117 @@ import br.edu.utfpr.cm.pi.persistence.PersistenceManager;
 
 public class JpaDao<T, I> implements Dao<T, I> {
 
-	protected EntityManager em;
-	protected Class<T> entityClass;
+    protected EntityManager em;
+    protected Class<T> entityClass;
 
-	public JpaDao(Class<T> entityClass) {
-		this.entityClass = entityClass;
-	}
+    public JpaDao(Class<T> entityClass) {
+        this.entityClass = entityClass;
+    }
 
-	@Override
-	public void save(T objeto) {
+    @Override
+    public void save(T objeto) {
 
-		try {
+        try {
 
-			em = PersistenceManager.getEntityManager();
-			em.getTransaction().begin();
-			em.persist(objeto);
-			em.getTransaction().commit();
-		} catch (Exception e) {
+            em = PersistenceManager.getEntityManager();
+            em.getTransaction().begin();
+            em.persist(objeto);
+            em.getTransaction().commit();
+        } catch (Exception e) {
 
-			em.getTransaction().rollback();
-			System.err.println("Ocorreu um erro ao salvar o objeto. \n"
-					+ e.fillInStackTrace());
-		} finally {
+            em.getTransaction().rollback();
+            System.err.println("Ocorreu um erro ao salvar o objeto. \n"
+                    + e.fillInStackTrace());
+        } finally {
 
-			em.close();
-		}
-	}
+            em.close();
+        }
+    }
 
-	@Override
-	public void update(T objeto) {
+    @Override
+    public void update(T objeto) {
 
-		try {
+        try {
 
-			em = PersistenceManager.getEntityManager();
-			em.getTransaction().begin();
-			em.merge(objeto);
-			em.getTransaction().commit();
-		} catch (Exception e) {
+            em = PersistenceManager.getEntityManager();
+            em.getTransaction().begin();
+            em.merge(objeto);
+            em.getTransaction().commit();
+        } catch (Exception e) {
 
-			em.getTransaction().rollback();
-			System.err.println("Ocorreu um erro ao atualizar o objeto. \n"
-					+ e.fillInStackTrace());
-		} finally {
+            em.getTransaction().rollback();
+            System.err.println("Ocorreu um erro ao atualizar o objeto. \n"
+                    + e.fillInStackTrace());
+        } finally {
 
-			em.close();
-		}
+            em.close();
+        }
 
-	}
+    }
 
-	public void delete(T objeto) {
+    public void delete(T objeto) {
 
-		try {
+        try {
 
-			em = PersistenceManager.getEntityManager();
-			em.getTransaction().begin();
-			em.remove(objeto);
-			em.getTransaction().commit();
-		} catch (Exception e) {
+            em = PersistenceManager.getEntityManager();
+            em.getTransaction().begin();
+            em.remove(objeto);
+            em.getTransaction().commit();
+        } catch (Exception e) {
 
-			em.getTransaction().rollback();
-			System.err.println("Ocorreu um erro ao excluir o objeto. \n"
-					+ e.fillInStackTrace());
-		} finally {
+            em.getTransaction().rollback();
+            System.err.println("Ocorreu um erro ao excluir o objeto. \n"
+                    + e.fillInStackTrace());
+        } finally {
 
-			em.close();
-		}
-	}
-	
-	public T findById(I id) {
+            em.close();
+        }
+    }
 
-		T objeto = null;
+    public T findById(I id) {
 
-		try {
+        T objeto = null;
 
-			em = PersistenceManager.getEntityManager();
-			objeto = em.find(entityClass, id);
-		} catch (Exception e) {
+        try {
 
-			System.err.println("Ocorreu um erro ao localizar o objeto. \n"
-					+ e.fillInStackTrace());
-		} finally {
+            em = PersistenceManager.getEntityManager();
+            objeto = em.find(entityClass, id);
+        } catch (Exception e) {
 
-			em.close();
-		}
+            System.err.println("Ocorreu um erro ao localizar o objeto. \n"
+                    + e.fillInStackTrace());
+        } finally {
 
-		return objeto;
-	}
+            em.close();
+        }
 
-	@Override
-	public List<T> getAll() {
+        return objeto;
+    }
 
-		List<T> results = null;
+    @Override
+    public List<T> getAll() {
 
-		try {
+        List<T> results = null;
 
-			em = PersistenceManager.getEntityManager();
-			CriteriaBuilder builder = em.getCriteriaBuilder();
-			CriteriaQuery<T> query = builder.createQuery(entityClass);
-			Root<T> root = query.from(entityClass);
-			query.select(root);
-			TypedQuery<T> typedQuery = em.createQuery(query);
-			results = typedQuery.getResultList();
-		} catch (Exception e) {
+        try {
 
-			System.err.println("Ocorreu um erro para retornar os objetos. \n"
-					+ e.fillInStackTrace());
-		} finally {
-			em.close();
-		}
+            em = PersistenceManager.getEntityManager();
+            CriteriaBuilder builder = em.getCriteriaBuilder();
+            CriteriaQuery<T> query = builder.createQuery(entityClass);
+            Root<T> root = query.from(entityClass);
+            query.select(root);
+            TypedQuery<T> typedQuery = em.createQuery(query);
+            results = typedQuery.getResultList();
+        } catch (Exception e) {
 
-		return results;
+            System.err.println("Ocorreu um erro para retornar os objetos. \n"
+                    + e.fillInStackTrace());
+        } finally {
+            em.close();
+        }
 
-	}
-	
+        return results;
+
+    }
+
 }

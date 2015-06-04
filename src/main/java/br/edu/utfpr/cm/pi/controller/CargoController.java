@@ -57,7 +57,7 @@ public class CargoController extends SuperController {
     public String excluir(HttpServletRequest request) {
         Cargo cargo = new Cargo();
         Long id = Long.parseLong(request.getParameter("id"));
-        cargo.setId(id);
+        cargo=dao.findById(id);
         dao.delete(cargo);
         return acaoPadrao(request);
     }
