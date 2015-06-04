@@ -1,7 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="br.edu.utfpr.cm.pi.daos.CargoDao"%>
-<%@ page import="br.edu.utfpr.cm.pi.beans.Cargo"%>
 
 <!DOCTYPE html>
 <html lang="pt-BR">

@@ -17,7 +17,7 @@ import br.edu.utfpr.cm.pi.daos.CargoDao;
  * 
  *         ppp
  */
-@WebServlet(name = "CargoController", urlPatterns = { "/cadastros/cargo/controlador" })
+@WebServlet(name = "CargoController", urlPatterns = {"/cadastros/cargo/controlador"})
 public class CargoController extends SuperController {
 
     /**
