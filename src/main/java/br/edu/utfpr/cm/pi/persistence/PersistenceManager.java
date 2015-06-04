@@ -6,48 +6,48 @@ import javax.persistence.Persistence;
 
 public class PersistenceManager {
 
-	private static EntityManagerFactory entityManagerFactory;
-	private static ThreadLocal<EntityManager> threadLocal;
+    private static EntityManagerFactory entityManagerFactory;
+    private static ThreadLocal<EntityManager> threadLocal;
 
-// Bloco estático - Permite que a EntityManagerFactory inicie apenas uma vez.
-	static {
+    // Bloco estático para que EntityManagerFactory inicie apenas uma vez.
+    static {
 
-		threadLocal = new ThreadLocal<EntityManager>();
-		try {
+        threadLocal = new ThreadLocal<EntityManager>();
+        try {
 
-			start();
-			System.out.println("Persistência iniciado com sucesso!");
-		} catch (Exception ex) {
+            start();
+            System.out.println("Persistência iniciado com sucesso!");
+        } catch (Exception ex) {
 
-			System.err.println("Falha ao iniciar a persistência!" + ex);
-			throw new ExceptionInInitializerError(ex);
-		}
-	}
+            System.err.println("Falha ao iniciar a persistência!" + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
+    }
 
-	/**
-	 * Inicializa a peristência.
-	 */
-	private final static void start() {
+    /**
+     * Inicializa a peristência.
+     */
+    private final static void start() {
 
-		entityManagerFactory = Persistence
-				.createEntityManagerFactory("SistemaPagamentoRU");
-	}
+        entityManagerFactory = Persistence.createEntityManagerFactory("SistemaPagamentoRU");
+    }
 
-	/**
-	 * Cria a {@code EntityManager} e associa à ThreadLocal.
-	 */
-	private static void createEntityManager() {
-		threadLocal.set(entityManagerFactory.createEntityManager());
-	}
+    /**
+     * Cria a {@code EntityManager} e associa à ThreadLocal.
+     */
+    private static void createEntityManager() {
 
-	/**
-	 * Obtém a {@code EntityManager} associada à ThreadLocal.
-	 * 
-	 * @return {@link EntityManager}
-	 */
-	public static EntityManager getEntityManager() {
-		createEntityManager();
-		EntityManager em = threadLocal.get();
-		return em;
-	}
+        threadLocal.set(entityManagerFactory.createEntityManager());
+    }
+
+    /**
+     * Obtém a {@code EntityManager} associada à ThreadLocal.
+     * 
+     * @return {@link EntityManager}
+     */
+    public static EntityManager getEntityManager() {
+        createEntityManager();
+        EntityManager em = threadLocal.get();
+        return em;
+    }
 }

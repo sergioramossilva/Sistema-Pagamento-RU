@@ -10,58 +10,60 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.jasper.JasperException;
 
-//@WebServlet(name = "SuperControlador", urlPatterns = { "/SuperController" })
 public abstract class SuperController extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public abstract String acaoPadrao(HttpServletRequest request);
+    public abstract String acaoPadrao(HttpServletRequest request);
 
-	public abstract String incluir(HttpServletRequest request);
+    public abstract String incluir(HttpServletRequest request);
 
-	public abstract String salvar(HttpServletRequest request) throws JasperException;
+    public abstract String salvar(HttpServletRequest request)
+            throws JasperException;
 
-	public abstract String alterar(HttpServletRequest request);
+    public abstract String alterar(HttpServletRequest request);
 
-	public abstract String excluir(HttpServletRequest request);
+    public abstract String excluir(HttpServletRequest request);
 
-	private String proximaPagina = "index.jsp";
+    private String proximaPagina = "index.jsp";
 
-	@Override
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
-	}
+    @Override
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException {
 
-	@Override
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		processRequest(request, response);
-	}
+        doPost(request, response);
+    }
 
-	protected void processRequest(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+    @Override
+    protected void doPost(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException {
 
-		response.setContentType("text/html;charset=UTF-8");
+        processRequest(request, response);
+    }
 
-		String acao = request.getParameter("acao");
+    protected void processRequest(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException {
 
-		if (acao == null) {
+        response.setContentType("text/html;charset=UTF-8");
 
-			proximaPagina = acaoPadrao(request);
-		} else {
-			try {
+        String acao = request.getParameter("acao");
 
-				Class<? extends SuperController> estaClasse = this.getClass();
-				Method metodo = estaClasse.getDeclaredMethod(acao,
-						HttpServletRequest.class);
-				proximaPagina = (String) metodo.invoke(this, request);
-			} catch (Exception ex) {
-				ex.printStackTrace();
-			}
-		}
+        if (acao == null) {
 
-		request.getRequestDispatcher(proximaPagina).forward(request, response);
+            proximaPagina = acaoPadrao(request);
+        } else {
+            try {
 
-	}
+                Class<? extends SuperController> estaClasse = this.getClass();
+                Method metodo = estaClasse.getDeclaredMethod(acao,
+                        HttpServletRequest.class);
+                proximaPagina = (String) metodo.invoke(this, request);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+
+        request.getRequestDispatcher(proximaPagina).forward(request, response);
+
+    }
 }

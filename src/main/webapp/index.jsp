@@ -12,7 +12,7 @@
         <form method="post" action="LoginServlet">
             <ul>
                 <li>
-                <label for="login">Login: </label>
+                    <label for="login">Login: </label>
                     <input id="login" name="login" type="text" value="${funcionario.login}" placeholder="Digite seu login" />
                 </li>
                 <li>
