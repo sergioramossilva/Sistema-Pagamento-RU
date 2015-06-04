@@ -66,6 +66,7 @@ public class JpaDao<T, I> implements Dao<T, I> {
 
             em = PersistenceManager.getEntityManager();
             em.getTransaction().begin();
+            objeto=em.merge(objeto);
             em.remove(objeto);
             em.getTransaction().commit();
         } catch (Exception e) {
