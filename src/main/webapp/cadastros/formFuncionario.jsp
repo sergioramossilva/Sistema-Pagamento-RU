@@ -28,7 +28,7 @@
 			<select id="cargo" name="cargo">
 				<option value="">Selecione um cargo</option>
 				<c:forEach items="${cargos}" var="cg">
-                    <option ${cg.id eq funcionario.cargo.id ? "selected='selected'" : ""} value="${cg.id}">${cg.nome}</option>
+                    <option ${cg.id eq funcionario.cargo.id ? 'selected' : ''} value="${cg.id}">${cg.nome}</option>
                 </c:forEach>
 			</select>
 		</div>
@@ -37,12 +37,26 @@
 			<label for="ativo">Ativo? </label> 
 			<input type="checkbox" id="ativo" name="ativo" value="true" ${funcionario.ativo ? 'checked' : '' } />
 		</div>
+		
+		<div>
+            <label for="dataCadastro">Data cadastro: </label> 
+            <input type="date" id="dataCadastro" name="dataCadastro" value="" />
+        </div>
+        
+        <div>
+            <label for="login">Login: </label> 
+            <input type="text" id="login" name="login" value="${funcionario.login}" placeholder="Informe um login" />
+        </div>
+
+        <div>
+            <label for="senha">Senha: </label> 
+            <input type="password" id="senha" name="senha" value="${funcionario.senha}" placeholder="informe uma senha" />
+        </div>
 
 		<div>
 			<button type="submit">Salvar</button>
 			<button type="reset">Limpar</button>
 		</div>
 	</form>
-
 </body>
 </html>
