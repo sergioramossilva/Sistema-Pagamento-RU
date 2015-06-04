@@ -12,11 +12,13 @@ import javax.servlet.http.HttpSession;
 import br.edu.utfpr.cm.pi.beans.Funcionario;
 import br.edu.utfpr.cm.pi.daos.FuncionarioDao;
 
-@WebServlet(description = "Login do funcionário", urlPatterns = { "/LoginServlet" })
+@WebServlet(name = "LoginServlet", urlPatterns = { "/LoginServlet" })
 public class LoginServlet extends HttpServlet {
+
     private static final long serialVersionUID = 1L;
 
     public LoginServlet() {
+
         super();
     }
 
@@ -29,21 +31,25 @@ public class LoginServlet extends HttpServlet {
         Funcionario funcionario = dao.getLogin(login, senha);
 
         if (funcionario != null) {
+
             HttpSession sessao = request.getSession(true);
             sessao.setAttribute("funcionario", funcionario);
             response.sendRedirect("bemvindo.jsp");
         } else {
+
             response.sendRedirect("loginInvalido.jsp");
         }
     }
 
     protected void doGet(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
+
         doPost(request, response);
     }
 
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
+
         service(request, response);
     }
 

@@ -39,7 +39,7 @@
 
 			<p class="lead">Sistema Pagamento RU</p>
 			<form id="cadCargo" class="form-horizontal" role="form" method="post"
-				action="CargoController?acao=salvar">
+				action="${pageContext.servletContext.contextPath}/CargoController?acao=salvar">
 				<input type="hidden" name="acao" value="salvar" /> <input
 					type="hidden" name="id" value="${cargo.id}" />
 

@@ -27,7 +27,7 @@
 </head>
 
 <body>
-
+     <jsp:include page="includes/menu.jsp" />
 	<!-- Wrap all page content here -->
 	<div id="wrap">
 

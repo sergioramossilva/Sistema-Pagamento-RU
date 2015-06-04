@@ -14,8 +14,6 @@ import br.edu.utfpr.cm.pi.daos.CargoDao;
 /**
  *
  * @author raphael
- * 
- *         ppp
  */
 @WebServlet(name = "CargoController", urlPatterns = {"/cadastros/cargo/controlador"})
 public class CargoController extends SuperController {
@@ -34,7 +32,7 @@ public class CargoController extends SuperController {
     public String acaoPadrao(HttpServletRequest request) {
         List<Cargo> cargos = dao.getAll();
         request.setAttribute("lista", cargos);
-        return "lista.jsp";
+        return "cadastros/cargo/lista.jsp";
     }
 
     public String incluir(HttpServletRequest request) {
