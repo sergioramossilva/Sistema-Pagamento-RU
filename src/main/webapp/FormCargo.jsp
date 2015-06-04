@@ -1,23 +1,23 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="br.edu.utfpr.cm.pi.daos.CargoDao" %>
-<%@ page import="br.edu.utfpr.cm.pi.beans.Cargo" %>
+<%@ page import="br.edu.utfpr.cm.pi.daos.CargoDao"%>
+<%@ page import="br.edu.utfpr.cm.pi.beans.Cargo"%>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-	<!-- Bootstrap core CSS -->
-		<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- Custom styles for this template -->
-		<link href="dashboard.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="dashboard.css" rel="stylesheet">
 
-	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-		<script src="assets/js/ie-emulation-modes-warning.js"></script>
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="assets/js/ie-emulation-modes-warning.js"></script>
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -40,10 +40,10 @@
 			</div>
 
 			<p class="lead">Sistema Pagamento RU</p>
-			<form id="cadCargo" class="form-horizontal" role="form"
-			method="post" action="CargoController?acao=salvar">
-				<input type="hidden" name="acao" value="salvar" />
-				<input type="hidden" name="id" value="${cargo.id}" />
+			<form id="cadCargo" class="form-horizontal" role="form" method="post"
+				action="CargoController?acao=salvar">
+				<input type="hidden" name="acao" value="salvar" /> <input
+					type="hidden" name="id" value="${cargo.id}" />
 
 				<div class="form-group">
 					<label for="nome" class="col-sm-2 control-label">Nome</label>
@@ -54,18 +54,17 @@
 				</div>
 
 				<div class="form-group">
-					<label for="nome" class="col-sm-2 control-label">Admin</label>
+					<label for="admin" class="col-sm-2 control-label">Admin</label>
 					<div class="col-sm-2">
-						<input type="checkbox" class="form-control" id="admin" name="admin" value="${cargo.admin}">
+						<input type="checkbox" class="form-control" id="admin"
+							name="admin" value="true" ${cargo.admin ? 'checked' : '' } />
 					</div>
-				</div>	
-							
+				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-5">
 						<button type="submit" class="btn btn-success">Salvar</button>
-						<a href="" class="btn btn-default">Cancelar</a> 
-						<a href="lista.jsp"
-						class="btn btn-default">Listar Cargos</a>
+						<a href="" class="btn btn-default">Cancelar</a> <a
+							href="lista.jsp" class="btn btn-default">Listar Cargos</a>
 					</div>
 				</div>
 
@@ -75,7 +74,7 @@
 			<div id="footer">
 				<div class="container">
 					<p class="text-muted">
-						Sistema Pagamento RU<strong>  Projeto Integrador</strong>.
+						Sistema Pagamento RU<strong> Projeto Integrador</strong>.
 					</p>
 				</div>
 			</div>
