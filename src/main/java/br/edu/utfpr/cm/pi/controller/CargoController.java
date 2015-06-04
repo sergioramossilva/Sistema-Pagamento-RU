@@ -5,6 +5,9 @@ import java.util.List;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.jasper.JasperException;
+import org.apache.jasper.runtime.JspRuntimeLibrary;
+
 import br.edu.utfpr.cm.pi.beans.Cargo;
 import br.edu.utfpr.cm.pi.daos.CargoDao;
 
@@ -40,9 +43,9 @@ public class CargoController extends SuperController {
         return "FormCargo.jsp";
     }
 
-    public String salvar(HttpServletRequest request) {
+    public String salvar(HttpServletRequest request) throws JasperException {
         Cargo cargo = new Cargo();
-
+        JspRuntimeLibrary.introspect(cargo, request);
         if (cargo.getId() == null) {
             dao.save(cargo);
         } else {
