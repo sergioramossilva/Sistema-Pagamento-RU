@@ -21,7 +21,7 @@
 		    <c:forEach items="${lista}" var="obj">
 		      <tr>
                 <td>${obj.nome}</td>
-                <td>${obj.admin ? Sim : Não}</td>
+                <td>${obj.admin ? 'Sim' : 'Não'}</td>
                 <td>
                 <a href="CargoController?acao=alterar&id=${obj.id}">Alterar</a>
                 <a href="CargoController?acao=excluir&id=${obj.id}">Excluir</a>

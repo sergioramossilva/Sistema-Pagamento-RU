@@ -32,7 +32,7 @@ public class CargoController extends SuperController {
     public String acaoPadrao(HttpServletRequest request) {
         List<Cargo> cargos = dao.getAll();
         request.setAttribute("lista", cargos);
-        return "cadastros/cargo/lista.jsp";
+        return "lista.jsp";
     }
 
     public String incluir(HttpServletRequest request) {
