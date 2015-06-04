@@ -11,8 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity(name="funcionario")
-@Inheritance(strategy=InheritanceType.JOINED)
+@Entity(name = "funcionario")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Funcionario extends BasicData implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -28,6 +28,8 @@ public class Funcionario extends BasicData implements Serializable {
     @Temporal(TemporalType.DATE)
     private Calendar dataCadastro;
     private boolean ativo;
+
+    @Column(unique = true)
     private String login;
     private String senha;
 
