@@ -1,0 +1,14 @@
+<%--            <div class="form-group">
+                <label for="admin" class="col-sm-2 control-label">Administrativo?</label>
+                <div class="col-sm-2">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                          <input type="checkbox" id="admin" name="admin" value="true" ${cargo.admin ? 'checked' : '' } />
+                        </span> 
+                        <input type="text" class="form-control" value="Sim" disabled />
+                    </div>
+                </div>
+            </div> --%>
+            
+ 
+ Usar o código acima no lugar dos botões de radio
