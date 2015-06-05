@@ -6,7 +6,8 @@
 
 		<!-- Implementação do JPA -->
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		
+
+		<!-- Classes mapeadas -->
 		<class>br.edu.utfpr.cm.pi.beans.BasicData</class>
 		<class>br.edu.utfpr.cm.pi.beans.Cargo</class>
 		<class>br.edu.utfpr.cm.pi.beans.Funcionario</class>
@@ -16,7 +17,6 @@
 
 		<properties>
 			<!-- Dados da conexão -->
-			
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/sistemapagamentoru" />
 			<property name="javax.persistence.jdbc.user" value="root" />
