@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <title>Sistema Pagamento RU - Cadastro de Funcionários</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../resources/js/bootstrap.min.js"></script>
+    <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -23,7 +23,7 @@
 
 		<div class="form-group">
 			<label class="col-sm-2 control-label" for="nome">Nome: </label>
-			<div class="col-sm-5">
+			<div class="col-sm-4">
 				<input type="text" class="form-control" id="nome" name="nome" value="${cargo.nome}" placeholder="Informe o cargo" />
 			</div>
 		</div>

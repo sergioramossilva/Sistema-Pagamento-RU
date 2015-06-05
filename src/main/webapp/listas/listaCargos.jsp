@@ -7,15 +7,22 @@
     <meta charset="UTF-8">
     <title>Sistema Pagamento RU - Lista de Cargos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h1>Lista de Cargos</h1>
-	<table>
+	<div class="container">
+
+		<div class="page-header">
+			<h1>Lista de Cargos</h1>
+		</div>
+
+		<table class="table table-striped table-hover">
 		<thead>
 			<tr>
-				<td>Nome</td>
-				<td>Administrativo</td>
-				<td>Opções</td>
+				<th>Nome</th>
+				<th>Administrativo</th>
+				<th>Opções</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -24,13 +31,19 @@
                 <td>${cargo.nome}</td>
                 <td>${cargo.admin ? 'Sim' : 'Não'}</td>
                 <td>
-                <a href="CargoController?acao=alterar&id=${cargo.id}">Alterar</a>
-                <a href="CargoController?acao=excluir&id=${cargo.id}">Excluir</a>
+                <a class="btn btn-warning" href="CargoController?acao=alterar&id=${cargo.id}">Alterar</a>
+                <a class="btn btn-danger" href="CargoController?acao=excluir&id=${cargo.id}">Excluir</a>
                 </td>
               </tr>
 		    </c:forEach>
-<%-- 		    <tr><td>${fn:length(lista)}</td></tr> --%>
 		</tbody>
+		<tfoot>
+		  <tr>
+		      <td colspan="2"><strong>Total de registros:</strong></td>
+		      <td><strong>${fn:length(lista)}</strong></td>
+		  </tr>
+		</tfoot>
 	</table>
+	</div>
 </body>
 </html>
