@@ -13,18 +13,18 @@
 		<thead>
 			<tr>
 				<td>Nome</td>
-				<td>Administrador</td>
+				<td>Administrativo</td>
 				<td>Opções</td>
 			</tr>
 		</thead>
 		<tbody>
-		    <c:forEach items="${lista}" var="obj">
+		    <c:forEach items="${lista}" var="cargo">
 		      <tr>
-                <td>${obj.nome}</td>
-                <td>${obj.admin ? 'Sim' : 'Não'}</td>
+                <td>${cargo.nome}</td>
+                <td>${cargo.admin ? 'Sim' : 'Não'}</td>
                 <td>
-                <a href="CargoController?acao=alterar&id=${obj.id}">Alterar</a>
-                <a href="CargoController?acao=excluir&id=${obj.id}">Excluir</a>
+                <a href="CargoController?acao=alterar&id=${cargo.id}">Alterar</a>
+                <a href="CargoController?acao=excluir&id=${cargo.id}">Excluir</a>
                 </td>
               </tr>
 		    </c:forEach>

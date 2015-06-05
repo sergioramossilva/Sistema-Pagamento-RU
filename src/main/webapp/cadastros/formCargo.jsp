@@ -12,14 +12,13 @@
 	<form id="cadCargos" method="post" action="${pageContext.servletContext.contextPath}/CargoController?acao=salvar">
 		<input type="hidden" name="acao" value="salvar" /> 
 		<input type="hidden" name="id" value="${cargo.id}" />
-
 		<div>
 			<label for="nome">Nome: </label> 
 			<input type="text" id="nome" name="nome" value="${cargo.nome}" placeholder="Informe um nome" />
 		</div>
 
 		<div>
-			<label for="admin">Administrador? </label> 
+			<label for="admin">Administrativo? </label> 
 			<input type="checkbox" id="admin" name="admin" value="true" ${cargo.admin ? 'checked' : '' } />
 		</div>
 

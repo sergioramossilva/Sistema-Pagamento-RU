@@ -2,8 +2,9 @@ package br.edu.utfpr.cm.pi.controller;
 
 
 import java.util.List;
-import javax.servlet.annotation.WebServlet;
+
 import javax.servlet.http.HttpServletRequest;
+
 import br.edu.utfpr.cm.pi.beans.Funcionario;
 import br.edu.utfpr.cm.pi.daos.FuncionarioDao;
 
@@ -12,7 +13,6 @@ import br.edu.utfpr.cm.pi.daos.FuncionarioDao;
  *
  * @author raphael
  */
-@WebServlet(name = "FuncionarioController", urlPatterns = {"/cadastros/funcionario/controlador"})
 public class FuncionarioController extends SuperController{
 
 	private static final long serialVersionUID = 1L;
