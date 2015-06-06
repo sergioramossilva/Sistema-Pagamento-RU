@@ -4,13 +4,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Sistema Pagamento RU - Lista de Cargos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
-    <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap.min.js"></script>
+    <title>Sistema Pagamento RU - Lista de Funcionários</title>
+    <jsp:include page="/includes/head.jsp" />
 </head>
 <body>
+
+	<jsp:include page="/includes/menu.jsp" />
 
 	<div class="container">
 

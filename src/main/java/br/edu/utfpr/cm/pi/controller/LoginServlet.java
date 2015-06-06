@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
         if (funcionario != null) {
 
             HttpSession sessao = request.getSession(true);
-            sessao.setAttribute("funcionario", funcionario);
+            sessao.setAttribute("func", funcionario);
             response.sendRedirect("bemvindo.jsp");
         } else {
 

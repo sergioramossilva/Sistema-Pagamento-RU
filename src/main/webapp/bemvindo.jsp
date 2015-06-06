@@ -12,7 +12,7 @@
       <jsp:include page="includes/menu.jsp" />
       
       <div id="container">
-            <h1>Seja bem Vindo!!! ${funcionario.nome}</h1>   
+            <h1>Seja bem Vindo!!! ${func.nome}</h1>   
         </div>
 </body>
 </html>

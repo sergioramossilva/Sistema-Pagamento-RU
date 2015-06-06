@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistema Pagamento RU - Falha na Autenticação</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <jsp:include page="/includes/head.jsp" />
 </head>
 <body>
     <h1>Falha na autenticação.</h1>

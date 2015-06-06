@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
     <title>Sistema Pagamento RU - Autenticação</title>
     <jsp:include page="includes/head.jsp" />
 </head>
@@ -20,14 +19,14 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="login">Login: </label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="login" name="login" value="${funcionario.login}" placeholder="Informe seu login" />
+                    <input type="text" class="form-control" id="login" name="login" value="${func.login}" placeholder="Informe seu login" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="senha">Senha: </label>
                 <div class="col-sm-4">
-                    <input type="password" class="form-control" id="senha" name="senha" value="${funcionario.senha}" placeholder="Digite sua senha" />
+                    <input type="password" class="form-control" id="senha" name="senha" value="${func.senha}" placeholder="Digite sua senha" />
                 </div>
             </div>
 
