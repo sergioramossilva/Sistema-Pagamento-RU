@@ -1,5 +1,6 @@
 package br.edu.utfpr.cm.pi.daos;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -8,9 +9,10 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+import br.edu.utfpr.cm.pi.beans.AbstractEntity;
 import br.edu.utfpr.cm.pi.persistence.PersistenceManager;
 
-public class JpaDao<T, I> implements Dao<T, I> {
+public class JpaDao<T extends AbstractEntity, I extends Serializable> implements Dao<T, I> {
 
     protected EntityManager em;
     protected Class<T> entityClass;
@@ -39,27 +41,6 @@ public class JpaDao<T, I> implements Dao<T, I> {
         }
     }
 
-    @Override
-    public void update(T objeto) {
-
-        try {
-
-            em = PersistenceManager.getEntityManager();
-            em.getTransaction().begin();
-            em.merge(objeto);
-            em.getTransaction().commit();
-        } catch (Exception e) {
-
-            em.getTransaction().rollback();
-            System.err.println("Ocorreu um erro ao atualizar o objeto. \n"
-                    + e.fillInStackTrace());
-        } finally {
-
-            em.close();
-        }
-
-    }
-
     public void delete(T objeto) {
 
         try {
@@ -80,6 +61,7 @@ public class JpaDao<T, I> implements Dao<T, I> {
         }
     }
 
+    @Override
     public T findById(I id) {
 
         T objeto = null;
