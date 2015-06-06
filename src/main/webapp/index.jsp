@@ -5,24 +5,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistema Pagamento RU - Autenticação</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <jsp:include page="includes/head.jsp" />
 </head>
 <body>
-    <h1>Autenticação</h1>
-    <form method="post" action="LoginServlet">
-        <div>
-            <label for="login">Login: </label>
-            <input id="login" name="login" type="text" value="${funcionario.login}" placeholder="Digite seu login" />
-        </div>
+     
+   <div class="container">
+   
+    <div class="page-header">
+       <h1>Autenticação</h1>
+    </div>
+    
+    <form class="form-horizontal" role="form" id="formLogin" method="post" action="LoginServlet">
+   
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="login">Login: </label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="login" name="login" value="${funcionario.login}" placeholder="Informe seu login" />
+                </div>
+            </div>
 
-        <div>
-            <label for="senha">Senha: </label>
-            <input id="senha" name="senha" type="password" value="${funcionario.senha}" placeholder="Digite sua senha" />
-        </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="senha">Senha: </label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="senha" name="senha" value="${funcionario.senha}" placeholder="Digite sua senha" />
+                </div>
+            </div>
 
-        <div>
-            <button type="submit">Entrar</button>
-        </div>
-    </form>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-4">
+				<button type="submit" class="btn btn-primary btn-lg btn-block">Entrar</button>
+			</div>
+		</div>
+	</form>
+	</div>
 </body>
 </html>

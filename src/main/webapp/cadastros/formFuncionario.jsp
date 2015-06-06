@@ -19,22 +19,20 @@
 
 		<form class="form-horizontal" role="form" id="cadCargos" method="post"
 			action="${pageContext.servletContext.contextPath}/FuncionarioController?acao=salvar">
-			<input type="hidden" name="acao" value="salvar" /> <input
-				type="hidden" name="id" value="${funcionario.id}" />
+			<input type="hidden" name="acao" value="salvar" /> 
+			<input type="hidden" name="id" value="${funcionario.id}" />
 
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="nome">Nome: </label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="nome" name="nome"
-						value="${funcionario.nome}" placeholder="Informe o nome" />
+					<input type="text" class="form-control" id="nome" name="nome" value="${funcionario.nome}" placeholder="Informe o nome" />
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="cpf">CPF: </label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="cpf" name="cpf"
-						value="${funcionario.cpf}" placeholder="Informe o cpf" />
+					<input type="text" class="form-control" id="cpf" name="cpf" value="${funcionario.cpf}" placeholder="Informe o cpf" />
 				</div>
 			</div>
 
@@ -54,44 +52,40 @@
 				<label for="admin" class="col-sm-2 control-label">Ativo?</label>
 				<div class="col-sm-2">
 					<div class="input-group">
-						<span class="input-group-addon"> <input type="radio"
-							id="admin" name="admin" value="true"
-							${funcionario.ativo ? 'checked' : '' } />
-						</span> <input type="text" class="form-control" value="Sim" disabled />
+						<span class="input-group-addon">
+						  <input type="radio" id="admin" name="admin" value="true" ${funcionario.ativo ? 'checked' : '' } />
+						</span>
+						  <input type="text" class="form-control" value="Sim" disabled />
 					</div>
 				</div>
 				<div class="col-sm-2">
 					<div class="input-group">
-						<span class="input-group-addon"> <input type="radio"
-							id="admin" name="admin" value="false"
-							${!funcionario.ativo ? 'checked' : '' } />
-						</span> <input type="text" class="form-control" value="Não" disabled />
+						<span class="input-group-addon"> 
+						  <input type="radio" id="admin" name="admin" value="false" ${!funcionario.ativo ? 'checked' : '' } />
+						</span> 
+						  <input type="text" class="form-control" value="Não" disabled />
 					</div>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="dataCadastro">Data
-					cadastro: </label>
+				<label class="col-sm-2 control-label" for="dataCadastro">Data cadastro: </label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="dataCadastro"
-						name="dataCadastro" value="${funcionario.dataCadastro}" />
+					<input type="text" class="form-control" id="dataCadastro" name="dataCadastro" value="${funcionario.dataCadastro}" />
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="login">Login: </label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="login" name="login"
-						value="${funcionario.login}" placeholder="Informe o login" />
+					<input type="text" class="form-control" id="login" name="login" value="${funcionario.login}" placeholder="Informe o login" />
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="nome">Senha: </label>
 				<div class="col-sm-4">
-					<input type="password" class="form-control" id="senha" name="senha"
-						value="${funcionario.senha}" placeholder="Informe a senha" />
+					<input type="password" class="form-control" id="senha" name="senha" value="${funcionario.senha}" placeholder="Informe a senha" />
 				</div>
 			</div>
 
