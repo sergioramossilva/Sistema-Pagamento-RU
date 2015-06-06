@@ -1,103 +1,66 @@
 package br.edu.utfpr.cm.pi.beans;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 
-/**
- * Entity implementation class for Entity: Cargo
- *
- */
-@Entity(name="cargo")
-@Inheritance(strategy=InheritanceType.JOINED)
-public class Cargo extends BasicData implements Serializable {
+@Entity
+public class Cargo extends AbstractEntity {
 
     private static final long serialVersionUID = 1L;
 
     private String nome;
-    private boolean admin;
+    private Boolean admin;
 
-    /**
-     * @return the nome
-     */
+    public Cargo() {
+        super();
+    }
+
     public String getNome() {
         return nome;
     }
 
-    /**
-     * @param nome
-     *            the nome to set
-     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    /**
-     * @return the admin
-     */
-    public boolean isAdmin() {
+    public Boolean getAdmin() {
         return admin;
     }
 
-    /**
-     * @param admin
-     *            the admin to set
-     */
-    public void setAdmin(boolean admin) {
+    public void setAdmin(Boolean admin) {
         this.admin = admin;
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see java.lang.Object#hashCode()
-     */
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = super.hashCode();
-        result = prime * result + (admin ? 1231 : 1237);
+        result = prime * result + ((admin == null) ? 0 : admin.hashCode());
         result = prime * result + ((nome == null) ? 0 : nome.hashCode());
         return result;
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see java.lang.Object#equals(java.lang.Object)
-     */
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
             return true;
-        }
-        if (!super.equals(obj)) {
+        if (!super.equals(obj))
             return false;
-        }
-        if (!(obj instanceof Cargo)) {
+        if (getClass() != obj.getClass())
             return false;
-        }
         Cargo other = (Cargo) obj;
-        if (admin != other.admin) {
-            return false;
-        }
-        if (nome == null) {
-            if (other.nome != null) {
+        if (admin == null) {
+            if (other.admin != null)
                 return false;
-            }
-        } else if (!nome.equals(other.nome)) {
+        } else if (!admin.equals(other.admin))
             return false;
-        }
+        if (nome == null) {
+            if (other.nome != null)
+                return false;
+        } else if (!nome.equals(other.nome))
+            return false;
         return true;
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see java.lang.Object#toString()
-     */
     @Override
     public String toString() {
         return "Cargo [id=" + this.getId() + ", nome=" + nome + ", admin="

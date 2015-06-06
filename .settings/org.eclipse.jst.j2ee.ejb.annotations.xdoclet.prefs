@@ -1,0 +1,7 @@
+XDOCLETBUILDERACTIVE=true
+XDOCLETHOME=
+XDOCLETUSEGLOBAL=true
+XDOCLETVERSION=1.2.3
+eclipse.preferences.version=1
+org.eclipse.jst.j2ee.xdoclet.runtime.internal.server.WeblogicWebdocletTaskProvider.defaultSelection=false
+org.eclipse.jst.j2ee.xdoclet.runtime.internal.tasks.DeploymentDescriptorWebdocletTaskProvider.defaultSelection=true

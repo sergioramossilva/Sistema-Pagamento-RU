@@ -1,32 +1,53 @@
 package br.edu.utfpr.cm.pi.beans;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 
-/**
- * Entity implementation class for Entity: tipo_transacao
- *
- */
-@Entity(name="tipo_transacao")
-@Inheritance(strategy=InheritanceType.JOINED)
-public class TipoTransacao extends BasicData implements Serializable {
+@Entity
+public class TipoTransacao extends AbstractEntity {
 
-	
-	private String nome;
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public TipoTransacao() {
-		super();
-	}   
-	public String getNome() {
-		return this.nome;
-	}
+    private String nome;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-   
+    public TipoTransacao() {
+        super();
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        TipoTransacao other = (TipoTransacao) obj;
+        if (nome == null) {
+            if (other.nome != null)
+                return false;
+        } else if (!nome.equals(other.nome))
+            return false;
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "TipoTransacao [id=" + this.getId() + ", nome=" + nome + "]";
+    }
 }

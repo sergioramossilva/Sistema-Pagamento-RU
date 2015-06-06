@@ -1,109 +1,129 @@
 package br.edu.utfpr.cm.pi.beans;
 
-import java.io.Serializable;
 import java.util.Calendar;
 
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 
-/**
- * Entity implementation class for Entity: transacao
- *
- */
-@Entity(name = "transacao")
-@Inheritance(strategy = InheritanceType.JOINED)
-public class Transacao extends BasicData implements Serializable {
-    @ManyToOne
-    private Usuario usuario;
-    @ManyToOne
-    private Funcionario funcionario;
+@Entity
+public class Transacao extends AbstractEntity {
+
+    private static final long serialVersionUID = 1L;
+
     @ManyToOne
     private TipoTransacao tipoTransacao;
-    private int quantidade;
+
+    @ManyToOne
+    private Funcionario funcionario;
+
+    @ManyToOne
+    private Usuario usuario;
+
+    private Integer quantidade;
     private Calendar data;
-    private static final long serialVersionUID = 1L;
 
     public Transacao() {
         super();
     }
 
-    /**
-     * @return the usuario
-     */
-    public Usuario getUsuario() {
-        return this.usuario;
-    }
-
-    /**
-     * @param usuario the usuario to set
-     */
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    /**
-     * @return the funcionario
-     */
-    public Funcionario getFuncionario() {
-        return this.funcionario;
-    }
-
-    /**
-     * @param funcionario the funcionario to set
-     */
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
-    }
-
-    /**
-     * @return the tipoTransacao
-     */
     public TipoTransacao getTipoTransacao() {
-        return this.tipoTransacao;
+        return tipoTransacao;
     }
 
-    /**
-     * @param tipoTransacao the tipoTransacao to set
-     */
     public void setTipoTransacao(TipoTransacao tipoTransacao) {
         this.tipoTransacao = tipoTransacao;
     }
 
-    /**
-     * @return the quantidade
-     */
-    public int getQuantidade() {
-        return this.quantidade;
+    public Funcionario getFuncionario() {
+        return funcionario;
     }
 
-    /**
-     * @param quantidade the quantidade to set
-     */
-    public void setQuantidade(int quantidade) {
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
     }
 
-    /**
-     * @return the data
-     */
     public Calendar getData() {
-        return this.data;
+        return data;
     }
 
-    /**
-     * @param data the data to set
-     */
     public void setData(Calendar data) {
         this.data = data;
     }
 
-    /**
-     * @return the serialversionuid
-     */
-    public static long getSerialversionuid() {
-        return serialVersionUID;
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((data == null) ? 0 : data.hashCode());
+        result = prime * result
+                + ((funcionario == null) ? 0 : funcionario.hashCode());
+        result = prime * result
+                + ((quantidade == null) ? 0 : quantidade.hashCode());
+        result = prime * result
+                + ((tipoTransacao == null) ? 0 : tipoTransacao.hashCode());
+        result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
+        return result;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Transacao other = (Transacao) obj;
+        if (data == null) {
+            if (other.data != null)
+                return false;
+        } else if (!data.equals(other.data))
+            return false;
+        if (funcionario == null) {
+            if (other.funcionario != null)
+                return false;
+        } else if (!funcionario.equals(other.funcionario))
+            return false;
+        if (quantidade == null) {
+            if (other.quantidade != null)
+                return false;
+        } else if (!quantidade.equals(other.quantidade))
+            return false;
+        if (tipoTransacao == null) {
+            if (other.tipoTransacao != null)
+                return false;
+        } else if (!tipoTransacao.equals(other.tipoTransacao))
+            return false;
+        if (usuario == null) {
+            if (other.usuario != null)
+                return false;
+        } else if (!usuario.equals(other.usuario))
+            return false;
+        return true;
     }
+
+    @Override
+    public String toString() {
+        return "Transacao [id=" + this.getId() + ", tipoTransacao="
+                + tipoTransacao + ", funcionario=" + funcionario + ", usuario="
+                + usuario + ", quantidade=" + quantidade + ", data=" + data
+                + "]";
+    }
+
+}
