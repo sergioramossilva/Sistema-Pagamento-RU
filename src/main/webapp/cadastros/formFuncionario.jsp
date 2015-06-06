@@ -37,11 +37,11 @@
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="cargo">Cargo: </label>
+				<label class="col-sm-2 control-label" for="cargos">Cargo: </label>
 				<div class="col-sm-4">
-					<select class="form-control" id="cargo" name="cargo">
+					<select class="form-control" id="cargos" name="idCargo">
 						<option value="">Selecione um cargo</option>
-						<c:forEach items="${cargos}" var="cg">
+						<c:forEach items="${crgos}" var="cg">
 							<option ${cg.id eq funcionario.cargo.id ? 'selected' : ''} value="${cg.id}">${cg.nome}</option>
 						</c:forEach>
 					</select>
@@ -49,11 +49,11 @@
 			</div>
 
 			<div class="form-group">
-				<label for="admin" class="col-sm-2 control-label">Ativo?</label>
+				<label for="ativo" class="col-sm-2 control-label">Ativo?</label>
 				<div class="col-sm-2">
 					<div class="input-group">
 						<span class="input-group-addon">
-						  <input type="radio" id="admin" name="admin" value="true" ${funcionario.ativo ? 'checked' : '' } />
+						  <input type="radio" id="ativo" name="admin" value="true" ${funcionario.ativo ? 'checked' : '' } />
 						</span>
 						  <input type="text" class="form-control" value="Sim" disabled />
 					</div>
@@ -61,7 +61,7 @@
 				<div class="col-sm-2">
 					<div class="input-group">
 						<span class="input-group-addon"> 
-						  <input type="radio" id="admin" name="admin" value="false" ${!funcionario.ativo ? 'checked' : '' } />
+						  <input type="radio" id="ativo" name="ativo" value="false" ${!funcionario.ativo ? 'checked' : '' } />
 						</span> 
 						  <input type="text" class="form-control" value="Não" disabled />
 					</div>

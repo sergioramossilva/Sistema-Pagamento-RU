@@ -1,31 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>sistema_pagamento_ru</display-name>
-  <servlet>
-    <servlet-name>SuperController</servlet-name>
-    <servlet-class>br.edu.utfpr.cm.pi.controller.SuperController</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>FuncionarioController</servlet-name>
-    <servlet-class>br.edu.utfpr.cm.pi.controller.FuncionarioController</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>CargoController</servlet-name>
-    <servlet-class>br.edu.utfpr.cm.pi.controller.CargoController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>SuperController</servlet-name>
-    <url-pattern>/SuperController</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>FuncionarioController</servlet-name>
-    <url-pattern>/FuncionarioController</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>CargoController</servlet-name>
-    <url-pattern>/CargoController</url-pattern>
-  </servlet-mapping>
-  <session-config>
-    <session-timeout>60</session-timeout>
-  </session-config>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>sistema_pagamento_ru</display-name>
+	<servlet>
+		<servlet-name>SuperController</servlet-name>
+		<servlet-class>br.edu.utfpr.cm.pi.controller.SuperController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FuncionarioController</servlet-name>
+		<servlet-class>br.edu.utfpr.cm.pi.controller.FuncionarioController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CargoController</servlet-name>
+		<servlet-class>br.edu.utfpr.cm.pi.controller.CargoController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SuperController</servlet-name>
+		<url-pattern>/SuperController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FuncionarioController</servlet-name>
+		<url-pattern>/FuncionarioController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CargoController</servlet-name>
+		<url-pattern>/CargoController</url-pattern>
+	</servlet-mapping>
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
 </web-app>
