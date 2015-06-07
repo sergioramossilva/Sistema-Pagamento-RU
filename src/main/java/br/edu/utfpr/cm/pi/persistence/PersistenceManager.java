@@ -9,8 +9,7 @@ import javax.persistence.Persistence;
  * <ul>
  * <li>Inicializar uma única instância da EntityManagerFactory;</li>
  * <li>Criar a EntityManager;</li>
- * <li>Associar a EntityManager a ThreadsLocais;</li>
- * <li>Obter EntityManagers.</li>
+ * <li>Associar a EntityManager na ThreadLocal;</li>
  * </ul>
  *
  */

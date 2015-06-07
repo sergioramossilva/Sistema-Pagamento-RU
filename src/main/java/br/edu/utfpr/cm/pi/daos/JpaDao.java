@@ -1,6 +1,7 @@
 package br.edu.utfpr.cm.pi.daos;
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -12,9 +13,10 @@ import javax.persistence.criteria.Root;
 import br.edu.utfpr.cm.pi.beans.AbstractEntity;
 import br.edu.utfpr.cm.pi.persistence.PersistenceManager;
 
-public class JpaDao<T extends AbstractEntity, I extends Serializable> implements Dao<T, I> {
+public class JpaDao<T extends AbstractEntity, I extends Serializable>
+        implements Dao<T, I> {
 
-    protected EntityManager em;
+    protected EntityManager manager;
     protected Class<T> entityClass;
 
     public JpaDao(Class<T> entityClass) {
@@ -26,38 +28,67 @@ public class JpaDao<T extends AbstractEntity, I extends Serializable> implements
 
         try {
 
-            em = PersistenceManager.getEntityManager();
-            em.getTransaction().begin();
-            em.persist(objeto);
-            em.getTransaction().commit();
-        } catch (Exception e) {
+            Field chave = objeto.getClass().getDeclaredField("id");
+            chave.setAccessible(true);
 
-            em.getTransaction().rollback();
-            System.err.println("Ocorreu um erro ao salvar o objeto. \n"
-                    + e.fillInStackTrace());
-        } finally {
+            Object valorChave = chave.get(objeto);
 
-            em.close();
+            if (valorChave == null) {
+
+                try {
+
+                    manager = PersistenceManager.getEntityManager();
+                    manager.getTransaction().begin();
+                    manager.persist(objeto);
+                    manager.getTransaction().commit();
+                } catch (Exception ex) {
+
+                    manager.getTransaction().rollback();
+                    ex.getMessage();
+                } finally {
+                    manager.close();
+                }
+            } else {
+                try {
+
+                    manager = PersistenceManager.getEntityManager();
+                    manager.getTransaction().begin();
+                    manager.merge(objeto);
+                    manager.getTransaction().commit();
+                } catch (Exception ex) {
+
+                    manager.getTransaction().rollback();
+                    ex.getMessage();
+                } finally {
+                    manager.close();
+                }
+            }
+
+        } catch (Exception ex) {
+
+            ex.getMessage();
+
         }
     }
 
+    @Override
     public void delete(T objeto) {
 
         try {
 
-            em = PersistenceManager.getEntityManager();
-            em.getTransaction().begin();
-            objeto=em.merge(objeto);
-            em.remove(objeto);
-            em.getTransaction().commit();
-        } catch (Exception e) {
+            manager = PersistenceManager.getEntityManager();
+            manager.getTransaction().begin();
+            objeto = manager.merge(objeto);
+            manager.remove(objeto);
+            manager.getTransaction().commit();
+        } catch (Exception ex) {
 
-            em.getTransaction().rollback();
-            System.err.println("Ocorreu um erro ao excluir o objeto. \n"
-                    + e.fillInStackTrace());
+            manager.getTransaction().rollback();
+            ex.getMessage();
+
         } finally {
 
-            em.close();
+            manager.close();
         }
     }
 
@@ -68,44 +99,40 @@ public class JpaDao<T extends AbstractEntity, I extends Serializable> implements
 
         try {
 
-            em = PersistenceManager.getEntityManager();
-            objeto = em.find(entityClass, id);
-        } catch (Exception e) {
+            manager = PersistenceManager.getEntityManager();
+            objeto = manager.find(entityClass, id);
+        } catch (Exception ex) {
 
-            System.err.println("Ocorreu um erro ao localizar o objeto. \n"
-                    + e.fillInStackTrace());
+            ex.getMessage();
         } finally {
 
-            em.close();
+            manager.close();
         }
 
         return objeto;
     }
 
-    @Override
     public List<T> getAll() {
 
         List<T> results = null;
 
         try {
 
-            em = PersistenceManager.getEntityManager();
-            CriteriaBuilder builder = em.getCriteriaBuilder();
+            manager = PersistenceManager.getEntityManager();
+            CriteriaBuilder builder = manager.getCriteriaBuilder();
             CriteriaQuery<T> query = builder.createQuery(entityClass);
             Root<T> root = query.from(entityClass);
             query.select(root);
-            TypedQuery<T> typedQuery = em.createQuery(query);
+            TypedQuery<T> typedQuery = manager.createQuery(query);
             results = typedQuery.getResultList();
-        } catch (Exception e) {
+        } catch (Exception ex) {
 
-            System.err.println("Ocorreu um erro para retornar os objetos. \n"
-                    + e.fillInStackTrace());
+            ex.getMessage();
         } finally {
-            em.close();
+            manager.close();
         }
 
         return results;
 
     }
-
 }
