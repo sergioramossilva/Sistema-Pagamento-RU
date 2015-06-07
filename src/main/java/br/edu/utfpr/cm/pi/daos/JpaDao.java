@@ -10,7 +10,7 @@ import br.edu.utfpr.cm.pi.persistence.PersistenceManager;
 
 public class JpaDao<T, I> {
 
-    private Class<T> entityClass;
+    private final Class<T> entityClass;
     protected EntityManager manager;
 
     public JpaDao(Class<T> entityClass) {
@@ -84,7 +84,7 @@ public class JpaDao<T, I> {
         }
     }
 
-    public T findById(I id) {
+    public <E> T findById(I id) {
 
         T objeto = null;
 
@@ -103,10 +103,10 @@ public class JpaDao<T, I> {
         return objeto;
     }
 
-    public List<?> getAll() {
+    @SuppressWarnings("unchecked")
+    public List<T> getAll() {
 
-        List<?> lista = null;
-
+        List<T> lista = null;
         try {
 
             manager = PersistenceManager.getEntityManager();
