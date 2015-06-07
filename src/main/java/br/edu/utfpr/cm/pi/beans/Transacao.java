@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity
+@Entity(name = "transacao")
 public class Transacao implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -29,7 +29,7 @@ public class Transacao implements Serializable {
     @ManyToOne
     private Usuario usuario;
 
-    private Integer quantidade;
+    private int quantidade;
 
     @Temporal(TemporalType.DATE)
     private Calendar data;
@@ -69,11 +69,11 @@ public class Transacao implements Serializable {
         this.usuario = usuario;
     }
 
-    public Integer getQuantidade() {
+    public int getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(Integer quantidade) {
+    public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
 
@@ -93,8 +93,7 @@ public class Transacao implements Serializable {
         result = prime * result
                 + ((funcionario == null) ? 0 : funcionario.hashCode());
         result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result
-                + ((quantidade == null) ? 0 : quantidade.hashCode());
+        result = prime * result + quantidade;
         result = prime * result
                 + ((tipoTransacao == null) ? 0 : tipoTransacao.hashCode());
         result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
@@ -125,10 +124,7 @@ public class Transacao implements Serializable {
                 return false;
         } else if (!id.equals(other.id))
             return false;
-        if (quantidade == null) {
-            if (other.quantidade != null)
-                return false;
-        } else if (!quantidade.equals(other.quantidade))
+        if (quantidade != other.quantidade)
             return false;
         if (tipoTransacao == null) {
             if (other.tipoTransacao != null)
@@ -149,5 +145,4 @@ public class Transacao implements Serializable {
                 + ", funcionario=" + funcionario + ", usuario=" + usuario
                 + ", quantidade=" + quantidade + ", data=" + data + "]";
     }
-
 }

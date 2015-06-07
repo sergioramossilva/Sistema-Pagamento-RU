@@ -36,7 +36,7 @@ public class FuncionarioController extends SuperController {
         Funcionario funcionario = new Funcionario();
         request.setAttribute("funcionario", funcionario);
         List<Cargo> cargos = cdao.getAll();
-        request.setAttribute("cargos", cargos);
+        request.setAttribute("listaCargos", cargos);
         return "cadastros/formFuncionario.jsp";
     }
 

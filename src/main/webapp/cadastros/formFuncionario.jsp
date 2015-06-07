@@ -41,7 +41,7 @@
 				<div class="col-sm-4">
 					<select class="form-control" id="cargos" name="idCargo">
 						<option value="">Selecione um cargo</option>
-						<c:forEach items="${crgos}" var="cg">
+						<c:forEach items="${listaCargos}" var="cg">
 							<option ${cg.id eq funcionario.cargo.id ? 'selected' : ''} value="${cg.id}">${cg.nome}</option>
 						</c:forEach>
 					</select>

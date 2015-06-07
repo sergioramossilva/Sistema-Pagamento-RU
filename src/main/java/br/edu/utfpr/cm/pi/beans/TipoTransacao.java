@@ -7,18 +7,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "tipotransacao")
 public class TipoTransacao implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    
+
     public TipoTransacao() {
-        }
+    }
 
     public Long getId() {
         return id;
@@ -72,5 +72,4 @@ public class TipoTransacao implements Serializable {
         return "TipoTransacao [id=" + id + ", nome=" + nome + "]";
     }
 
-    
 }
