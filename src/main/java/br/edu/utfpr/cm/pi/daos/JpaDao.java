@@ -4,7 +4,10 @@ import java.lang.reflect.Field;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import br.edu.utfpr.cm.pi.persistence.PersistenceManager;
 
@@ -84,7 +87,7 @@ public class JpaDao<T, I> {
         }
     }
 
-    public <E> T findById(I id) {
+    public T findById(I id) {
 
         T objeto = null;
 
@@ -103,21 +106,23 @@ public class JpaDao<T, I> {
         return objeto;
     }
 
-    @SuppressWarnings("unchecked")
     public List<T> getAll() {
 
         List<T> lista = null;
+        
         try {
 
             manager = PersistenceManager.getEntityManager();
-            Query query = manager.createQuery("FROM "
-                    + entityClass.getSimpleName());
-            lista = query.getResultList();
+            CriteriaBuilder builder = manager.getCriteriaBuilder();
+            CriteriaQuery<T> query = builder.createQuery(entityClass);
+            Root<T> root = query.from(entityClass);
+            query.select(root);
+            TypedQuery<T> typedQuery = manager.createQuery(query);
+            lista = typedQuery.getResultList();
         } catch (Exception ex) {
 
             ex.getMessage();
         } finally {
-
             manager.close();
         }
 
