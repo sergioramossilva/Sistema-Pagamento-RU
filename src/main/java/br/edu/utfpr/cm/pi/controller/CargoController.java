@@ -40,11 +40,8 @@ public class CargoController extends SuperController {
     public String salvar(HttpServletRequest request) throws JasperException {
         Cargo cargo = new Cargo();
         JspRuntimeLibrary.introspect(cargo, request);
-        if (cargo.getId() == null) {
-            dao.save(cargo);
-        } else {
-            dao.update(cargo);
-        }
+
+        dao.save(cargo);
         return acaoPadrao(request);
     }
 

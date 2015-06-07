@@ -55,13 +55,10 @@ public class FuncionarioController extends SuperController {
         Cargo cargo = cdao.findById(idCargo);
         funcionario.setCargo(cargo);
         
-        if (funcionario.getId() == null) {
+
         
             fdao.save(funcionario);
-        } else {
-            
-            fdao.update(funcionario);
-        }
+
         return acaoPadrao(request);
     }
 
