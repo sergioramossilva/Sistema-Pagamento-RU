@@ -9,7 +9,12 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<!-- Classes mapeadas -->
-
+		<class>br.edu.utfpr.cm.pi.beans.Cargo</class>
+		<class>br.edu.utfpr.cm.pi.beans.Funcionario</class>
+		<class>br.edu.utfpr.cm.pi.beans.TipoTransacao</class>
+		<class>br.edu.utfpr.cm.pi.beans.Transacao</class>
+        <class>br.edu.utfpr.cm.pi.beans.Usuario</class>
+		
 		<properties>
 			<!-- Dados da conexão -->
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
