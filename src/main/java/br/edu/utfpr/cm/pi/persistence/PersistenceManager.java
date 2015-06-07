@@ -4,6 +4,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+/**
+ * Classe utilitária para gerenciamento do JPA, tem como objetivos:
+ * <ul>
+ * <li>Inicializar uma única instância da EntityManagerFactory;</li>
+ * <li>Criar a EntityManager;</li>
+ * <li>Associar a EntityManager a ThreadsLocais;</li>
+ * <li>Obter EntityManagers.</li>
+ * </ul>
+ *
+ */
 public class PersistenceManager {
 
     private static EntityManagerFactory entityManagerFactory;
@@ -12,7 +22,7 @@ public class PersistenceManager {
     // Bloco estático para que EntityManagerFactory inicie apenas uma vez.
     static {
 
-        threadLocal = new ThreadLocal<EntityManager>();
+        threadLocal = new ThreadLocal<>();
         try {
 
             start();
@@ -27,9 +37,10 @@ public class PersistenceManager {
     /**
      * Inicializa a peristência.
      */
-    private final static void start() {
+    private static void start() {
 
-        entityManagerFactory = Persistence.createEntityManagerFactory("SistemaPagamentoRU");
+        entityManagerFactory = Persistence
+                .createEntityManagerFactory("SistemaPagamentoRU");
     }
 
     /**

@@ -2,9 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.edu.utfpr.cm.pi.raru</groupId>
-	<artifactId>sistema_pagamento_ra_ru</artifactId>
+	<artifactId>Sistema-Pagamento-RU</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+	<name>Sistema Pagamento RU</name>
+	<description>Um nova forma para pagar refeições</description>
 	<dependencies>
 		<dependency>
 			<groupId>log4j</groupId>
