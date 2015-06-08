@@ -31,4 +31,12 @@
 	<session-config>
 		<session-timeout>60</session-timeout>
 	</session-config>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/erros/paginanaoencontrada.jsp</location>
+	</error-page>
+<!-- 	<error-page>
+		<exception-type>java.lang.IllegalStateException</exception-type>
+		<location>/erros/erro.jsp</location>
+	</error-page> -->
 </web-app>
