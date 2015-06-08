@@ -54,7 +54,6 @@ public class Validator {
             return true;
         } else {
 
-            System.out.println("CPF inválido!");
             return false;
         }
     }
