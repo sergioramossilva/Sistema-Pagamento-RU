@@ -16,6 +16,7 @@
 				nome : "Por favor informe o nome do cargo.",
 			}
 		});
+		$("#selecttest").validate();
 	});
 </script>
 </head>
@@ -69,7 +70,7 @@
 				</div>
 			</div>
 		</form>
-
 	</div>
+	<jsp:include page="includes/footer.jsp" />
 </body>
 </html>
