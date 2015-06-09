@@ -5,6 +5,22 @@
 <head>
 <title>Sistema Pagamento RU - Autenticação</title>
 <jsp:include page="includes/head.jsp" />
+<script>
+	$().ready(function() {
+
+		$("#formLogin").validate({
+			rules : {
+				login : "required",
+				senha : "required",
+			},
+			messages : {
+				login : "Por favor digite seu login",
+				senha : "Por favor digite sua senha",
+			}
+		});
+
+	});
+</script>
 </head>
 <body>
 	<div class="container">

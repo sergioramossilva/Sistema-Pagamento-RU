@@ -4,3 +4,4 @@
 <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap-theme.min.css" rel="stylesheet">
 <script src="${pageContext.servletContext.contextPath}/resources/js/jquery.min.js"></script>
 <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap.min.js"></script>
+<script src="${pageContext.servletContext.contextPath}/resources/js/jquery.validate.min.js"></script>
