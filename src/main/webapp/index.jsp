@@ -16,7 +16,14 @@
 			messages : {
 				login : "Por favor digite seu login",
 				senha : "Por favor digite sua senha",
-			}
+			},
+
+		/* 	         success: function(label) {
+		 label.html("&nbsp;").addClass("checked");
+		 },
+		 highlight: function(element, errorClass) {
+		 $(element).parent().next().find("." + errorClass).removeClass("checked");
+		 }, */
 		});
 
 	});

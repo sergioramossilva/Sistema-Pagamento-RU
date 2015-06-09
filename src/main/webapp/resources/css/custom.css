@@ -1,7 +1,16 @@
 label.error {
-	color: red;
+	color: #EA5200;
 	font-style: italic;
-	font-weight: normal;
+	font-weight: bold;
+	padding-left: 16px;
+	padding-bottom: 3px;
+	background: transparent url("../images/unchecked.gif") no-repeat scroll
+		0px 0px;
+}
+
+label.checked {
+	background: transparent url("../images/checked.gif") no-repeat scroll
+		0px 0px;
 }
 
 #footer {
