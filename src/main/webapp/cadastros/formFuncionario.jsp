@@ -64,15 +64,6 @@
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="dataCadastro">Data
-					cadastro: </label>
-				<div class="col-sm-4">
-					<input type="text" class="form-control" id="dataCadastro"
-						name="dataCadastro" value="${funcionario.dataCadastro}" />
-				</div>
-			</div>
-
-			<div class="form-group">
 				<label class="col-sm-2 control-label" for="login">Login: </label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="login" name="login"
