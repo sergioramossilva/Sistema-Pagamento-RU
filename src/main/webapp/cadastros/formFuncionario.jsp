@@ -52,21 +52,13 @@
 			</div>
 
 			<div class="form-group">
-				<label for="ativo" class="col-sm-2 control-label">Ativo?</label>
+				<label for="admin" class="col-sm-2 control-label">Administrativo?</label>
 				<div class="col-sm-2">
 					<div class="input-group">
-						<span class="input-group-addon"> <input type="radio"
-							id="ativo" name="admin" value="true"
+						<span class="input-group-addon"> <input type="checkbox"
+							id="admin" name="admin" value="true"
 							${funcionario.ativo ? 'checked' : '' } />
 						</span> <input type="text" class="form-control" value="Sim" disabled />
-					</div>
-				</div>
-				<div class="col-sm-2">
-					<div class="input-group">
-						<span class="input-group-addon"> <input type="radio"
-							id="ativo" name="ativo" value="false"
-							${!funcionario.ativo ? 'checked' : '' } />
-						</span> <input type="text" class="form-control" value="Não" disabled />
 					</div>
 				</div>
 			</div>

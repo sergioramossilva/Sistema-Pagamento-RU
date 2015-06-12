@@ -42,27 +42,17 @@
 						value="${cargo.nome}" placeholder="Informe o cargo" />
 				</div>
 			</div>
-
 			<div class="form-group">
 				<label for="admin" class="col-sm-2 control-label">Administrativo?</label>
 				<div class="col-sm-2">
 					<div class="input-group">
-						<span class="input-group-addon"> <input type="radio"
+						<span class="input-group-addon"> <input type="checkbox"
 							id="admin" name="admin" value="true"
 							${cargo.admin ? 'checked' : '' } />
 						</span> <input type="text" class="form-control" value="Sim" disabled />
 					</div>
 				</div>
-				<div class="col-sm-2">
-					<div class="input-group">
-						<span class="input-group-addon"> <input type="radio"
-							id="admin" name="admin" value="false"
-							${!cargo.admin ? 'checked' : '' } />
-						</span> <input type="text" class="form-control" value="Não" disabled />
-					</div>
-				</div>
 			</div>
-
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-5">
 					<button type="submit" class="btn btn-success">Salvar</button>
