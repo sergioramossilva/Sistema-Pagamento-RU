@@ -35,7 +35,7 @@
 						<td>${funcionario.cpf}</td>
 						<td>${funcionario.cargo.nome}</td>
 						<td>${funcionario.ativo ? 'Sim' : 'Não'}</td>
-						<td>${funcionario.dataCadastro}</td>
+						<td>${funcionario.dataCadastroFormatada}</td>
 						<td>
 						<a class="btn btn-warning" href="FuncionarioController?acao=alterar&id=${funcionario.id}">Alterar</a>
 						<a class="btn btn-danger" href="FuncionarioController?acao=excluir&id=${funcionario.id}">Excluir</a>
