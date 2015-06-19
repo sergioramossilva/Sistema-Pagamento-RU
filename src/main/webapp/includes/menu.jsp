@@ -30,7 +30,12 @@
 						<li><a
 							href="${pageContext.servletContext.contextPath}/FuncionarioController">Listar
 								Funcionários</a></li>
-					</ul></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown"><a href="cadastros/formAutorizacaoCompra.jsp" class="dropdown-toggle">Autorização de Compra
+				</a>
+				</li>
 
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
