@@ -14,10 +14,10 @@ import br.edu.utfpr.cm.pi.daos.FuncionarioDao;
 @Controller
 public class FuncionarioController {
 
-    private final FuncionarioDao cdao;
+    private final FuncionarioDao fdao;
 
     public FuncionarioController() {
-        cdao = new FuncionarioDao();
+        fdao = new FuncionarioDao();
     }
 
     @RequestMapping("incluirFuncionario")
@@ -29,25 +29,25 @@ public class FuncionarioController {
 
     @RequestMapping("salvarFuncionario")
     public String salvar(Funcionario funcionario) {
-        cdao.save(funcionario);
+        fdao.save(funcionario);
         return "forward:listarFuncionarios";
     }
 
     @RequestMapping("excluirFuncionario")
     public String excluir(Funcionario funcionario) {
-        cdao.delete(funcionario);
+        fdao.delete(funcionario);
         return "forward:listarFuncionarios";
     }
     
     @RequestMapping("alterarFuncionario")
     public String alterar(Long id, Model model) {        
-        model.addAttribute("funcionario", cdao.findById(id));
+        model.addAttribute("funcionario", fdao.findById(id));
         return "cadastros/formFuncionario.jsp";
     }
 
     @RequestMapping("listarFuncionarios")
     public String lista(Model model) {
-        List<Funcionario> funcionarios = cdao.getAll();
+        List<Funcionario> funcionarios = fdao.getAll();
         model.addAttribute("funcionarios", funcionarios);
         return "listas/listaFuncionarios.jsp";
     }
