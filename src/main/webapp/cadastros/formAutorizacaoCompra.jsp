@@ -40,7 +40,7 @@
 			<h1>Autorização de Compra</h1>
 		</div>
 
-		<form class="form-horizontal" role="form" id="cadUsuario" method="post"	action="">
+		<form class="form-control" role="form" id="cadUsuario" method="post"	action="">
 			<input type="hidden" name="acao" value="salvar" /> 
 			<input type="hidden" name="id" value="${usuario.id}" />
 			<div class="form-group">
