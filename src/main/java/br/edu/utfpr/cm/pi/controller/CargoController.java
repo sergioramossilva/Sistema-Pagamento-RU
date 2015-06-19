@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+
+
+
 import org.apache.jasper.JasperException;
 import org.apache.jasper.runtime.JspRuntimeLibrary;
 
@@ -35,7 +38,7 @@ public class CargoController extends SuperController {
     }
 
     @Override
-    public String salvar(HttpServletRequest request) throws JasperException {
+    public String salvar(HttpServletRequest request) throws JasperException  {
         Cargo cargo = new Cargo();
         JspRuntimeLibrary.introspect(cargo, request);
         cdao.save(cargo);
