@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import br.edu.utfpr.cm.pi.utils.FormataData;
+
 @Entity(name = "funcionario")
 public class Funcionario implements Serializable {
 
@@ -68,6 +70,11 @@ public class Funcionario implements Serializable {
 
     public Calendar getDataCadastro() {
         return dataCadastro;
+    }
+    
+    public String getdataCadastroFormatada() {
+        FormataData data = new FormataData(dataCadastro);
+        return data.dataFormatada();
     }
 
     public void setDataCadastro(Calendar dataCadastro) {
