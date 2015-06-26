@@ -10,9 +10,12 @@ import org.apache.jasper.runtime.JspRuntimeLibrary;
 import br.edu.utfpr.cm.pi.beans.Cargo;
 import br.edu.utfpr.cm.pi.daos.CargoDao;
 
-public class CargoController extends SuperController {
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-    private static final long serialVersionUID = 1L;
+@Controller
+public class CargoController {
 
     private final CargoDao cdao;
 
@@ -20,44 +23,35 @@ public class CargoController extends SuperController {
         cdao = new CargoDao();
     }
 
-    @Override
-    public String acaoPadrao(HttpServletRequest request) {
-        List<Cargo> cargos = cdao.getAll();
-        request.setAttribute("lista", cargos);
-        return "listas/listaCargos.jsp";
-    }
-
-    @Override
+    @RequestMapping("incluirCargo")
     public String incluir(HttpServletRequest request) {
         Cargo cargo = new Cargo();
         request.setAttribute("cargo", cargo);
         return "cadastros/formCargo.jsp";
     }
 
-    @Override
-    public String salvar(HttpServletRequest request) throws JasperException {
-        Cargo cargo = new Cargo();
-        JspRuntimeLibrary.introspect(cargo, request);
+    @RequestMapping("salvarCargo")
+    public String salvar(Cargo cargo) {
         cdao.save(cargo);
-        return acaoPadrao(request);
+        return "forward:listarCargos";
     }
 
-    @Override
-    public String alterar(HttpServletRequest request) {
-        Cargo cargo = new Cargo();
-        Long id = Long.parseLong(request.getParameter("id"));
-        cargo = cdao.findById(id);
-        request.setAttribute("cargo", cargo);
+    @RequestMapping("excluirCargo")
+    public String excluir(Cargo cargo) {
+        cdao.delete(cargo);
+        return "forward:listarCargos";
+    }
+    
+    @RequestMapping("alterarCargo")
+    public String alterar(Long id, Model model) {        
+        model.addAttribute("cargo", cdao.findById(id));
         return "cadastros/formCargo.jsp";
     }
 
-    @Override
-    public String excluir(HttpServletRequest request) {
-        Cargo cargo = new Cargo();
-        Long id = Long.parseLong(request.getParameter("id"));
-        cargo = cdao.findById(id);
-        cdao.delete(cargo);
-        return acaoPadrao(request);
+    @RequestMapping("listarCargos")
+    public String lista(Model model) {
+        List<Cargo> cargos = cdao.getAll();
+        model.addAttribute("cargos", cargos);
+        return "listas/listaCargos.jsp";
     }
-
 }

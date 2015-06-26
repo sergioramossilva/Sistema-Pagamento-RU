@@ -1,74 +1,53 @@
+
 package br.edu.utfpr.cm.pi.controller;
 
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
-
-import org.apache.jasper.JasperException;
-import org.apache.jasper.runtime.JspRuntimeLibrary;
-
-import br.edu.utfpr.cm.pi.beans.Cargo;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 import br.edu.utfpr.cm.pi.beans.Funcionario;
-import br.edu.utfpr.cm.pi.daos.CargoDao;
 import br.edu.utfpr.cm.pi.daos.FuncionarioDao;
 
-public class FuncionarioController extends SuperController {
-
-    private static final long serialVersionUID = 1L;
+@Controller
+public class FuncionarioController {
 
     private final FuncionarioDao fdao;
-    private final CargoDao cdao;
 
     public FuncionarioController() {
         fdao = new FuncionarioDao();
-        cdao = new CargoDao();
     }
 
-    @Override
-    public String acaoPadrao(HttpServletRequest request) {
-        List<Funcionario> funcionarios = fdao.getAll();
-        request.setAttribute("lista", funcionarios);
-        return "listas/listaFuncionarios.jsp";
-    }
-
-    @Override
+    @RequestMapping("incluirFuncionario")
     public String incluir(HttpServletRequest request) {
         Funcionario funcionario = new Funcionario();
         request.setAttribute("funcionario", funcionario);
-        List<Cargo> cargos = cdao.getAll();
-        request.setAttribute("listaCargos", cargos);
         return "cadastros/formFuncionario.jsp";
     }
 
-    @Override
-    public String salvar(HttpServletRequest request) throws JasperException {
-        Funcionario funcionario = new Funcionario();
-        JspRuntimeLibrary.introspect(funcionario, request);
-        Long idCargo = Long.parseLong(request.getParameter("idCargo"));
-        Cargo cargo = cdao.findById(idCargo);
-        funcionario.setCargo(cargo);
+    @RequestMapping("salvarFuncionario")
+    public String salvar(Funcionario funcionario) {
         fdao.save(funcionario);
-        return acaoPadrao(request);
-
+        return "forward:listarFuncionarios";
     }
 
-    @Override
-    public String alterar(HttpServletRequest request) {
-        Long id = Long.parseLong(request.getParameter("id"));
-        Funcionario funcionario = fdao.findById(id);
-        request.setAttribute("funcionario", funcionario);
-        List<Cargo> cargos = cdao.getAll();
-        request.setAttribute("cargos", cargos);
+    @RequestMapping("excluirFuncionario")
+    public String excluir(Funcionario funcionario) {
+        fdao.delete(funcionario);
+        return "forward:listarFuncionarios";
+    }
+    
+    @RequestMapping("alterarFuncionario")
+    public String alterar(Long id, Model model) {        
+        model.addAttribute("funcionario", fdao.findById(id));
         return "cadastros/formFuncionario.jsp";
     }
 
-    @Override
-    public String excluir(HttpServletRequest request) {
-        Funcionario funcionario = new Funcionario();
-        Long id = Long.parseLong(request.getParameter("id"));
-        funcionario.setId(id);
-        fdao.delete(funcionario);
-        return acaoPadrao(request);
+    @RequestMapping("listarFuncionarios")
+    public String lista(Model model) {
+        List<Funcionario> funcionarios = fdao.getAll();
+        model.addAttribute("funcionarios", funcionarios);
+        return "listas/listaFuncionarios.jsp";
     }
 
 }
