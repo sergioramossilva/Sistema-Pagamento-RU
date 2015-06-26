@@ -4,7 +4,7 @@
 <html lang="pt-BR">
 <head>
 <title>Sistema Pagamento RU - Autenticação</title>
-<jsp:include page="includes/head.jsp" />
+<jsp:include page="/includes/head.jsp" />
 <script>
 	$().ready(function() {
 
