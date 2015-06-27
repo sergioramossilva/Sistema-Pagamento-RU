@@ -4,8 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.jasper.JasperException;
-import org.apache.jasper.runtime.JspRuntimeLibrary;
 
 import br.edu.utfpr.cm.pi.beans.Cargo;
 import br.edu.utfpr.cm.pi.daos.CargoDao;

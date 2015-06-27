@@ -19,7 +19,7 @@
 		</div>
 
 		<form class="form-horizontal" role="form" id="cadCargos" method="post"
-			action="${pageContext.servletContext.contextPath}/FuncionarioController?acao=salvar">
+			action="salvarFuncionario">
 			<input type="hidden" name="acao" value="salvar" /> <input
 				type="hidden" name="id" value="${funcionario.id}" />
 

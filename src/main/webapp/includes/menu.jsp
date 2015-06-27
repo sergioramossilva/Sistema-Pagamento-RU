@@ -12,10 +12,10 @@
 					<ul class="dropdown-menu" role="menu">
 						<!-- <li class="dropdown-header">Principais</li> -->
 						<li><a
-							href="${pageContext.servletContext.contextPath}/CargoController?acao=incluir">Cargos</a></li>
+							href="${pageContext.servletContext.contextPath}/incluirCargo">Cargos</a></li>
 						<li class="divider"></li>
 						<li><a
-							href="${pageContext.servletContext.contextPath}/FuncionarioController?acao=incluir">Funcionários</a></li>
+							href="incluirFuncionario">Funcionários</a></li>
 					</ul></li>
 
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -24,7 +24,7 @@
 					<ul class="dropdown-menu" role="menu">
 						<!-- <li class="dropdown-header">Principais</li> -->
 						<li><a
-							href="${pageContext.servletContext.contextPath}/CargoController">Listar
+							href="listarCargos">Listar
 								Cargos</a></li>
 						<li class="divider"></li>
 						<li><a
