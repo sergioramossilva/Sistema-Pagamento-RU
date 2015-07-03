@@ -27,7 +27,7 @@ public class Transacao implements Serializable {
     private Funcionario funcionario;
 
     @ManyToOne
-    private Usuario usuario;
+    private UsuarioSistema usuario;
 
     private int quantidade;
 
@@ -61,11 +61,11 @@ public class Transacao implements Serializable {
         this.funcionario = funcionario;
     }
 
-    public Usuario getUsuario() {
+    public UsuarioSistema getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(UsuarioSistema usuario) {
         this.usuario = usuario;
     }
 

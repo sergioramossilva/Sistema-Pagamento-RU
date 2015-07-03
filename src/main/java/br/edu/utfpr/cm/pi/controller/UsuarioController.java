@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.edu.utfpr.cm.pi.beans.Usuario;
+import br.edu.utfpr.cm.pi.beans.UsuarioSistema;
 import br.edu.utfpr.cm.pi.daos.UsuarioDao;
 
 public class UsuarioController {
@@ -20,19 +20,19 @@ public class UsuarioController {
     
     @RequestMapping("incluirUsuario")
     public String incluir(HttpServletRequest request) {
-        Usuario usuario = new Usuario();
+        UsuarioSistema usuario = new UsuarioSistema();
         request.setAttribute("usuario", usuario);
         return "cadastros/formUsuario.jsp";
     }
 
     @RequestMapping("salvarUsuario")
-    public String salvar(Usuario usuario) {
+    public String salvar(UsuarioSistema usuario) {
         udao.save(usuario);
         return "forward:listarUsuarios";
     }
 
     @RequestMapping("excluirUsuario")
-    public String excluir(Usuario usuario) {
+    public String excluir(UsuarioSistema usuario) {
         udao.delete(usuario);
         return "forward:listarUsuarios";
     }
@@ -45,7 +45,7 @@ public class UsuarioController {
 
     @RequestMapping("listarUsuarios")
     public String lista(Model model) {
-        List<Usuario> usuarios = udao.getAll();
+        List<UsuarioSistema> usuarios = udao.getAll();
         model.addAttribute("usuarios", usuarios);
         return "listas/listaUsuarios.jsp";
     }
