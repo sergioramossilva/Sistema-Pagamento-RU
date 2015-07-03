@@ -36,7 +36,7 @@ public class Funcionario implements Serializable {
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -52,7 +52,7 @@ public class Funcionario implements Serializable {
     }
 
     public String getCpf() {
-        return cpf;
+        return this.cpf;
     }
 
     public void setCpf(String cpf) {
@@ -60,7 +60,7 @@ public class Funcionario implements Serializable {
     }
 
     public Cargo getCargo() {
-        return cargo;
+        return this.cargo;
     }
 
     public void setCargo(Cargo cargo) {
@@ -97,7 +97,7 @@ public class Funcionario implements Serializable {
     }
 
     public String getSenha() {
-        return senha;
+        return this.senha;
     }
 
     public void setSenha(String senha) {
