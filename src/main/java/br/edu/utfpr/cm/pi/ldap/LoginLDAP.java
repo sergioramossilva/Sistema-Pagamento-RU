@@ -1,10 +1,9 @@
 package br.edu.utfpr.cm.pi.ldap;
 
-
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import br.edu.utfpr.cm.pi.beans.UsuarioSistema;
 import br.edu.utfpr.cm.saa.entidades.Usuario;
 import br.edu.utfpr.cm.saa.security.LDAPManager;
 
@@ -17,7 +16,7 @@ import com.novell.ldap.LDAPException;
  */
 public class LoginLDAP {
 
-    public Usuario logarNoLDAP(String login, String senha) {
+    public UsuarioSistema logarNoLDAP(String login, String senha) {
         try {
             LDAPManager ldapManager = new LDAPManager("172.17.2.4:389", "ou=todos,dc=utfpr,dc=edu,dc=br");
 
@@ -41,15 +40,20 @@ public class LoginLDAP {
                     //para permitir a autorização local
                     //assword = "";
                     //} else {
-                    //throw new UnknownAccountException("Não existe conta com este login.");
+                    //throw new UnknownAccountException("N�o existe conta com este login.");
                     //}
-                    return ldapManager.search(login);
+                    Usuario usuarioLdap = ldapManager.search(login);
+                    UsuarioSistema usuarioSistema = new UsuarioSistema();
+                    usuarioSistema.setLogin(usuarioLdap.getLogin());
+                    usuarioSistema.setNome(usuarioLdap.getNome());
+                    return usuarioSistema;
                 } else {
                     System.out.println("Fail");
                     return null;
                 }
                 
-            }return null;
+            }
+            return null;
         } catch (LDAPException ex) {
             Logger.getLogger(MainLDAP.class.getName()).log(Level.SEVERE, null, ex);
             return null;

@@ -12,7 +12,7 @@ public class MainLDAP {
 
     public static void main(String args[]) {
         
-        LoginLDAP lo = new LoginLDAP();
+        /*LoginLDAP lo = new LoginLDAP();
         
         //Usuario user =  lo.logarNoLDAP("wennersantos", "");
         
@@ -137,5 +137,5 @@ public class MainLDAP {
 //            Logger.getLogger(MainLDAP.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 
-    }
+   */ }
 }

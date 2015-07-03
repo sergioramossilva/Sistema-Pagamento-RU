@@ -33,6 +33,7 @@ public class Funcionario implements Serializable {
     private String senha;
 
     public Funcionario() {
+        this.dataCadastro = Calendar.getInstance();
     }
 
     public Long getId() {
@@ -74,10 +75,6 @@ public class Funcionario implements Serializable {
     public String getdataCadastroFormatada() {
         FormataData data = new FormataData(dataCadastro);
         return data.dataFormatada();
-    }
-
-    public void setDataCadastro(Calendar dataCadastro) {
-        this.dataCadastro = dataCadastro;
     }
 
     public boolean isAtivo() {

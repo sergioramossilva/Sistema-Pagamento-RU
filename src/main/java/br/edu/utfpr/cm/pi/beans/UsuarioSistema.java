@@ -23,12 +23,14 @@ public class UsuarioSistema implements Serializable {
 
     @Temporal(TemporalType.DATE)
     private Calendar dataCriacao;
+    private String nome;
 
     public UsuarioSistema() {
+        this.dataCriacao = Calendar.getInstance();
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -36,7 +38,7 @@ public class UsuarioSistema implements Serializable {
     }
 
     public String getLogin() {
-        return login;
+        return this.login;
     }
 
     public void setLogin(String login) {
@@ -44,7 +46,7 @@ public class UsuarioSistema implements Serializable {
     }
 
     public Double getSaldo() {
-        return saldo;
+        return this.saldo;
     }
 
     public void setSaldo(Double saldo) {
@@ -52,11 +54,22 @@ public class UsuarioSistema implements Serializable {
     }
 
     public Calendar getDataCriacao() {
-        return dataCriacao;
+        return this.dataCriacao;
     }
 
-    public void setDataCriacao(Calendar dataCriacao) {
-        this.dataCriacao = dataCriacao;
+
+    /**
+     * @return the nome
+     */
+    public String getNome() {
+        return this.nome;
+    }
+
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     @Override

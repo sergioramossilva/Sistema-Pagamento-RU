@@ -35,6 +35,7 @@ public class Transacao implements Serializable {
     private Calendar data;
 
     public Transacao() {
+        this.data = Calendar.getInstance();
     }
 
     public Long getId() {
@@ -79,10 +80,6 @@ public class Transacao implements Serializable {
 
     public Calendar getData() {
         return data;
-    }
-
-    public void setData(Calendar data) {
-        this.data = data;
     }
 
     @Override
