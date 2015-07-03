@@ -13,7 +13,7 @@
 		<class>br.edu.utfpr.cm.pi.beans.Funcionario</class>
 		<class>br.edu.utfpr.cm.pi.beans.TipoTransacao</class>
 		<class>br.edu.utfpr.cm.pi.beans.Transacao</class>
-        <class>br.edu.utfpr.cm.pi.beans.Usuario</class>
+        <class>br.edu.utfpr.cm.pi.beans.UsuarioSistema</class>
 		
 		<properties>
 			<!-- Dados da conexão -->

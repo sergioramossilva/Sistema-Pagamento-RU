@@ -3,13 +3,13 @@ package br.edu.utfpr.cm.pi.ldap;
 
 import java.io.Serializable;
 
-import br.edu.utfpr.cm.pi.beans.Usuario;
+import br.edu.utfpr.cm.pi.beans.UsuarioSistema;
 
 /**
  *
  * @author Paulo Azevedo
  */
-public class UserLDAP extends Usuario implements Serializable{
+public class UserLDAP extends UsuarioSistema implements Serializable{
 
     /**
      * 

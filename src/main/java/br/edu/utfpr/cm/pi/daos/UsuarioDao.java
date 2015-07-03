@@ -1,11 +1,11 @@
 package br.edu.utfpr.cm.pi.daos;
 
-import br.edu.utfpr.cm.pi.beans.Usuario;
+import br.edu.utfpr.cm.pi.beans.UsuarioSistema;
 
-public class UsuarioDao extends JpaDao<Usuario, Long> {
+public class UsuarioDao extends JpaDao<UsuarioSistema, Long> {
 
     public UsuarioDao() {
-        super(Usuario.class);
+        super(UsuarioSistema.class);
     }
 
 }

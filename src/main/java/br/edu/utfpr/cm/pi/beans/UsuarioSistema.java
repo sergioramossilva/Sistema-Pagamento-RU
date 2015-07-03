@@ -11,7 +11,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity(name = "usuario")
-public class Usuario implements Serializable {
+public class UsuarioSistema implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -24,7 +24,7 @@ public class Usuario implements Serializable {
     @Temporal(TemporalType.DATE)
     private Calendar dataCriacao;
 
-    public Usuario() {
+    public UsuarioSistema() {
     }
 
     public Long getId() {
@@ -79,7 +79,7 @@ public class Usuario implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Usuario other = (Usuario) obj;
+        UsuarioSistema other = (UsuarioSistema) obj;
         if (dataCriacao == null) {
             if (other.dataCriacao != null)
                 return false;
