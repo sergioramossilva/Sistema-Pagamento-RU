@@ -94,8 +94,6 @@
 			<artifactId>spring-core</artifactId>
 			<version>4.1.6.RELEASE</version>
 		</dependency>
-
-
 	</dependencies>
 	<build>
 		<finalName>SistemaPagamentoRU</finalName>
