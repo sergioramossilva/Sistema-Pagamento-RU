@@ -4,7 +4,13 @@
 <html lang="pt-BR">
 <head>
 <title>Sistema Pagamento RU - Autenticação</title>
-<jsp:include page="/includes/head.jsp" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
 <script>
 	$().ready(function() {
 
@@ -17,13 +23,6 @@
 				login : "Por favor digite seu login",
 				senha : "Por favor digite sua senha",
 			},
-
-		/* 	         success: function(label) {
-		 label.html("&nbsp;").addClass("checked");
-		 },
-		 highlight: function(element, errorClass) {
-		 $(element).parent().next().find("." + errorClass).removeClass("checked");
-		 }, */
 		});
 
 	});
@@ -72,6 +71,6 @@
 			</div>
 		</div>
 	</div>
-	<jsp:include page="includes/footer.jsp" />
+	<jsp:include page="/includes/footer.jsp" />
 </body>
 </html>

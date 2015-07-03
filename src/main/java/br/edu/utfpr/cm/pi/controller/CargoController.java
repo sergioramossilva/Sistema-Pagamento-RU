@@ -17,6 +17,8 @@ public class CargoController {
     public CargoController() {
         cdao = new CargoDao();
     }
+    
+    @RequestMapping("incluirCargo")
     public String incluir() {
         return "cadastros/formCargo";
     }
