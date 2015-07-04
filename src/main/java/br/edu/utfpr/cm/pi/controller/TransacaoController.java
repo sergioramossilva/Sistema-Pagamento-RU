@@ -22,6 +22,11 @@ public class TransacaoController {
     public String incluir() {
         return "cadastros/formAutorizacaoCompra";
     }
+    
+    @RequestMapping("inserirCredito")
+    public String incluirCredito() {
+        return "cadastros/formInserirCredito";
+    }
 
     @RequestMapping("salvarTransacao")
     public String salvar(Transacao transacao) {
