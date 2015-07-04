@@ -27,6 +27,7 @@ public class UsuarioSistema implements Serializable {
 
     public UsuarioSistema() {
         this.dataCriacao = Calendar.getInstance();
+        this.saldo = 0.0;
     }
 
     public Long getId() {
