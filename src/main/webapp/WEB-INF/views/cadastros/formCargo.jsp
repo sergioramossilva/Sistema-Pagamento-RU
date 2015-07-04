@@ -14,8 +14,7 @@
 </head>
 <body>
 
-<%-- 	<jsp:include page="/includes/menu.jsp" /> --%>
-
+	<jsp:include page="/includes/menu.jsp" /> 
 	<div class="container">
 
 		<div class="page-header">
