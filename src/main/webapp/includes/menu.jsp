@@ -33,7 +33,15 @@
 					</ul>
 				</li>
 				
-				<li class="dropdown"><a href="cadastros/formAutorizacaoCompra.jsp" class="dropdown-toggle">Autorização de Compra
+				<li class="dropdown">
+				<a
+					href="${pageContext.servletContext.contextPath}/inserirCredito">Inserir Crédito
+				</a>
+				</li>
+				
+				<li class="dropdown">
+				<a
+					href="${pageContext.servletContext.contextPath}/autorizarCompra">Autorização de Compra
 				</a>
 				</li>
 
