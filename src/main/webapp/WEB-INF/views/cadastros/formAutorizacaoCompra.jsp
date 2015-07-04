@@ -47,8 +47,7 @@
 			<h1>Autorização de Compra</h1>
 		</div>
 
-		<form class="form-control" role="form" id="cadUsuario" method="post"	action="">
-			<input type="hidden" name="acao" value="salvar" /> 
+		<form class="form-control" role="form" id="cadUsuario" method="post" action="salvarTransacao">
 			<input type="hidden" name="id" value="${usuario.id}" />
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="nome">Usuário: </label>
@@ -57,14 +56,12 @@
 						value="${usuario.nome}" placeholder="Informe seu Usuário" />
 					</div>
 			</div>
+			
 			<label class="col-sm-2 control-label" id="senha" for="nome">Senha: </label>
 					<div class="col-sm-4">
 						<input type="text" class="form-control" id="senha" name="senha"
 						value="${usuario.senha}" placeholder="Informe sua senha" />
 					</div>
-				<div>
-				<br></br>
-				 </div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-5">
 					<button type="submit" class="btn btn-success">Salvar</button>

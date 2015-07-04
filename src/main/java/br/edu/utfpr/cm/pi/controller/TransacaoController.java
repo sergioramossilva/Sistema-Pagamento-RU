@@ -2,14 +2,14 @@ package br.edu.utfpr.cm.pi.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.edu.utfpr.cm.pi.beans.Transacao;
 import br.edu.utfpr.cm.pi.daos.TransacaoDao;
 
+@Controller
 public class TransacaoController {
 
     private final TransacaoDao tdao;
@@ -18,11 +18,14 @@ public class TransacaoController {
         tdao = new TransacaoDao();
     }
 
-    @RequestMapping("incluirTransacao")
-    public String incluir(HttpServletRequest request) {
-        Transacao transacao = new Transacao();
-        request.setAttribute("transacao", transacao);
-        return "cadastros/formTransacao.jsp";
+    @RequestMapping("autorizarCompra")
+    public String incluir() {
+        return "cadastros/formAutorizacaoCompra";
+    }
+    
+    @RequestMapping("inserirCredito")
+    public String incluirCredito() {
+        return "cadastros/formInserirCredito";
     }
 
     @RequestMapping("salvarTransacao")
@@ -40,13 +43,14 @@ public class TransacaoController {
     @RequestMapping("alterarTransacao")
     public String alterar(Long id, Model model) {
         model.addAttribute("transacao", tdao.findById(id));
-        return "cadastros/formTransacao.jsp";
+        return "cadastros/formAutorizacaoCompra";
     }
 
-    @RequestMapping("listarTransacaos")
+    @RequestMapping("listarTransacoes")
     public String lista(Model model) {
         List<Transacao> transacaos = tdao.getAll();
         model.addAttribute("transacaos", transacaos);
-        return "listas/listaTransacaos.jsp";
+        return "listas/listaTransacaos";
     }
+
 }

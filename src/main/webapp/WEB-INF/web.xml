@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	id="WebApp_ID" version="3.1">
-	<display-name>sistema_pagamento_ru</display-name>
-  
-	<servlet>
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+    id="WebApp_ID" version="3.1">
+    <display-name>sistema_pagamento_ru</display-name>
+
+    <servlet>
         <servlet-name>Spring-MVC</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
@@ -29,13 +29,13 @@
         <filter-name>hiddenHttpMethodFilter</filter-name>
         <servlet-name>Spring-MVC</servlet-name>
     </filter-mapping>
-    
-	<session-config>
-		<session-timeout>60</session-timeout>
-	</session-config>
-	
-	<error-page>
-		<error-code>404</error-code>
-		<location>/erros/paginanaoencontrada.jsp</location>
-	</error-page>
+
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/erros/paginanaoencontrada.jsp</location>
+    </error-page>
 </web-app>
