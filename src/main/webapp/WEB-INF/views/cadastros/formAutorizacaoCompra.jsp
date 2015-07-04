@@ -47,8 +47,7 @@
 			<h1>Autorização de Compra</h1>
 		</div>
 
-		<form class="form-control" role="form" id="cadUsuario" method="post"	action="">
-			<input type="hidden" name="acao" value="salvar" /> 
+		<form class="form-control" role="form" id="cadUsuario" method="post" action="salvarTransacao">
 			<input type="hidden" name="id" value="${usuario.id}" />
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="nome">Usuário: </label>

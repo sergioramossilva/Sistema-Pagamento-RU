@@ -18,9 +18,9 @@ public class TransacaoController {
         tdao = new TransacaoDao();
     }
 
-    @RequestMapping("incluirTransacao")
+    @RequestMapping("autorizarCompra")
     public String incluir() {
-        return "cadastros/formTransacao";
+        return "cadastros/formAutorizacaoCompra";
     }
 
     @RequestMapping("salvarTransacao")
@@ -38,7 +38,7 @@ public class TransacaoController {
     @RequestMapping("alterarTransacao")
     public String alterar(Long id, Model model) {
         model.addAttribute("transacao", tdao.findById(id));
-        return "cadastros/formTransacao";
+        return "cadastros/formAutorizacaoCompra";
     }
 
     @RequestMapping("listarTransacaos")
