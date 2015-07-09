@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 import br.edu.utfpr.cm.pi.utils.FormataData;
 
 @Entity(name = "funcionario")

@@ -18,6 +18,7 @@ public class Teste {
         funcionario.setAtivo(true);
         Cargo c = cdao.findById(1L);
         funcionario.setCargo(c);
+        
         funcionario.setCpf("12345678911");
         funcionario.setLogin("admin");
         funcionario.setSenha("admin");
