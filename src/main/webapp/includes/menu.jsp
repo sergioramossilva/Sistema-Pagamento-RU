@@ -28,7 +28,7 @@
 								Cargos</a></li>
 						<li class="divider"></li>
 						<li><a
-							href="${pageContext.servletContext.contextPath}/FuncionarioController">Listar
+							href="${pageContext.servletContext.contextPath}/listarFuncionarios">Listar
 								Funcionários</a></li>
 					</ul>
 				</li>

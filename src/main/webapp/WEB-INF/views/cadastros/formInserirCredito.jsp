@@ -15,30 +15,33 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
-	
+
 <script>
 	$().ready(function() {
 
 		$("#inserirCreditos").validate({
 			rules : {
-				cliente :{ required: true
+				cliente : {
+					required : true
+				},
+				refeicao : {
+					required : true,
+					number : true
+				}
 			},
-			refeicao :{ required: true, number: true
+			messages : {
+				cliente : {
+					required : "Informe o Cliente",
+				},
+				refeicao : {
+					required : "Informe a quantidade de Refeições",
+				}
 			}
-	},
-  		  messages:{
-      		  cliente:{
-        		  required: "Informe o Cliente",
-	      },
-       		 refeicao:{
-         		 required: "Informe a quantidade de Refeições",
-        	 }
-		}
-	});
-	
+		});
+
 		$("#selecttest").validate();
 	});
-</script>	
+</script>
 </head>
 <body>
 
@@ -50,22 +53,24 @@
 			<h1>Inserir Créditos</h1>
 		</div>
 
-		<form class="form-horizontal" role="form" id="inserirCreditos" method="post"
-			action="salvarTransacao">
-			<input type="hidden" name="acao" value="salvar" /> <input
-				type="hidden" name="id" value="${transacao.id}" />
+		<form class="form-horizontal" role="form" id="inserirCreditos"
+			method="post" action="salvarTransacao">
+			<input type="hidden" name="id" value="${transacao.id}" />
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="cliente">Login Cliente: </label>
+				<label class="col-sm-2 control-label" for="cliente">Login
+					Cliente: </label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="cliente" name="cliente"
 						value="${usuario.login}" placeholder="Informe login do cliente" />
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="admin" class="col-sm-2 control-label">Nº Refeições: </label>
+				<label for="admin" class="col-sm-2 control-label">Nº
+					Refeições: </label>
 				<div class="col-sm-2">
-					<input type="text" class="form-control" name="refeicao" id="refeicao" >
+					<input type="text" class="form-control" name="refeicao"
+						id="refeicao">
 				</div>
 			</div>
 			<div class="form-group">

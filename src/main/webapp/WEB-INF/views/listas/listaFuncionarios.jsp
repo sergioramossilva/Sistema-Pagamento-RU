@@ -35,7 +35,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${lista}" var="funcionario">
+				<c:forEach items="${funcionarios}" var="funcionario">
 					<tr>
 						<td>${funcionario.nome}</td>
 						<td>${funcionario.cpf}</td>
@@ -52,7 +52,7 @@
 			<tfoot>
 				<tr>
 					<td colspan="5"><strong>Total de registros:</strong></td>
-				 	<td><strong>${fn:length(lista)}</strong></td>  
+				 	<td><strong>${fn:length(funcionarios)}</strong></td>  
 				</tr>
 			</tfoot>
 		</table>

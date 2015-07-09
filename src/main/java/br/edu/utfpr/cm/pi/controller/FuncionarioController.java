@@ -7,20 +7,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.edu.utfpr.cm.pi.beans.Cargo;
 import br.edu.utfpr.cm.pi.beans.Funcionario;
+import br.edu.utfpr.cm.pi.daos.CargoDao;
 import br.edu.utfpr.cm.pi.daos.FuncionarioDao;
 
 @Controller
 public class FuncionarioController {
 
     private final FuncionarioDao fdao;
+    private final CargoDao cdao;
 
     public FuncionarioController() {
         fdao = new FuncionarioDao();
+        cdao = new CargoDao();
     }
     
     @RequestMapping("incluirFuncionario")
-    public String incluir() {
+    public String incluir(Model model) {
+        List<Cargo> cargos = cdao.getAll();
+        model.addAttribute("listaCargos", cargos);
         return "cadastros/formFuncionario";
     }
 

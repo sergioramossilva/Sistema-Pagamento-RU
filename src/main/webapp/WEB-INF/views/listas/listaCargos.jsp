@@ -46,7 +46,7 @@
 		<tfoot>
 		  <tr>
 		      <td colspan="2"><strong>Total de registros:</strong></td>
-		       <td><strong>${fn:length(lista)}</strong></td>  
+		       <td><strong>${fn:length(cargos)}</strong></td>  
 		  </tr>
 		</tfoot>
 	</table>

@@ -2,6 +2,7 @@ import br.edu.utfpr.cm.pi.beans.Cargo;
 import br.edu.utfpr.cm.pi.beans.Funcionario;
 import br.edu.utfpr.cm.pi.daos.CargoDao;
 import br.edu.utfpr.cm.pi.daos.FuncionarioDao;
+import br.edu.utfpr.cm.pi.utils.Validator;
 
 public class Teste {
 
@@ -19,7 +20,14 @@ public class Teste {
         Cargo c = cdao.findById(1L);
         funcionario.setCargo(c);
         
-        funcionario.setCpf("12345678911");
+        String cpf = "33312498740";
+                
+        if(Validator.validarCPF(cpf)) {
+            funcionario.setCpf(cpf);
+        } else {
+            System.out.println("Aviso: cpf inválido!");
+        }
+        
         funcionario.setLogin("admin");
         funcionario.setSenha("admin");
         funcionario.setNome("Gerente do Negocio");
