@@ -43,8 +43,8 @@
 						<td>${funcionario.ativo ? 'Sim' : 'Não'}</td>
 						<td>${funcionario.dataCadastroFormatada}</td>
 						<td>
-						<a class="btn btn-warning" href="FuncionarioController?acao=alterar&id=${funcionario.id}">Alterar</a>
-						<a class="btn btn-danger" href="FuncionarioController?acao=excluir&id=${funcionario.id}">Excluir</a>
+						<a class="btn btn-warning" href="alterarFuncionario?id=${funcionario.id}">Alterar</a>
+						<a class="btn btn-danger" href="excluirFuncionario?id=${funcionario.id}">Excluir</a>
 						</td>
 					</tr>
 				</c:forEach>
