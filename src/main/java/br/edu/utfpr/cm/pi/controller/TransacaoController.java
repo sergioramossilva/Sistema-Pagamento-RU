@@ -31,21 +31,26 @@ public class TransacaoController {
     public String incluirCredito() {
         return "cadastros/formInserirCredito";
     }
+    
+    @RequestMapping("creditar")
+    public String creditar(Transacao transacao) {
+        
+        UsuarioSistema user = udao.findById(transacao.getUsuario().getId());
+        user.setSaldo(user.getSaldo()+transacao.getQuantidade());
+        return "forward:salvarTransacao";
+    }
+    
+    @RequestMapping("debitar")
+    public String debitar(Transacao transacao) {
+        
+        UsuarioSistema user = udao.findById(transacao.getUsuario().getId());
+        user.setSaldo(user.getSaldo()-transacao.getQuantidade());
+        return "forward:salvarTransacao";
+    }
 
     @RequestMapping("salvarTransacao")
     public String salvar(Transacao transacao) {
 
-        UsuarioSistema user = udao.findById(transacao.getUsuario().getId());
-        
-        //Credito
-        if(transacao.getTipoTransacao()) {
-            user.setSaldo(user.getSaldo()+transacao.getQuantidade());
-            transacao.setUsuario(user);
-            //Debito
-        } else {
-            user.setSaldo(user.getSaldo()-transacao.getQuantidade());
-            transacao.setUsuario(user);
-        }
         tdao.save(transacao);
         return "forward:listarTransacoes";
     }

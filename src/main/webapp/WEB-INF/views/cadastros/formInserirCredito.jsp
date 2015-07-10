@@ -54,7 +54,7 @@
 		</div>
 
 		<form class="form-horizontal" role="form" id="inserirCreditos"
-			method="post" action="salvarTransacao">
+			method="post" action="creditar">
 			<input type="hidden" name="id" value="${transacao.id}" />
 
 			<div class="form-group">
