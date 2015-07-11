@@ -52,7 +52,7 @@
 			<h1>Autorização de Compra</h1>
 		</div>
 
-		<form class="form-horizontal" role="form" id="autorizaCompra" method="post" action="salvarTransacao">
+		<form class="form-horizontal" role="form" id="autorizaCompra" method="post" action="debitar">
 			<input type="hidden" name="id" value="${usuario.id}" />
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="nome">Usuário: </label>
