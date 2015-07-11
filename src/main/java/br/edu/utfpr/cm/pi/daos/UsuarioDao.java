@@ -16,7 +16,7 @@ public class UsuarioDao extends JpaDao<UsuarioSistema, Long> {
             Usuario ul) {
         try {
             manager = PersistenceManager.getEntityManager();
-            TypedQuery<UsuarioSistema> query = manager.createQuery("select u from UsuarioSistema u where login = :login", UsuarioSistema.class);
+            TypedQuery<UsuarioSistema> query = manager.createQuery("select u from usuario u where login = :login", UsuarioSistema.class);
             query.setParameter("login", ul.getLogin());
 
             return query.getSingleResult();
