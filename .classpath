@@ -29,6 +29,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="src/main/resources/saalib.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/saalib.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
