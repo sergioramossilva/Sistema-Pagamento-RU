@@ -4,22 +4,25 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.edu.utfpr.cm.pi.beans.Transacao;
 import br.edu.utfpr.cm.pi.beans.UsuarioSistema;
 import br.edu.utfpr.cm.pi.daos.TransacaoDao;
 import br.edu.utfpr.cm.pi.daos.UsuarioDao;
+import br.edu.utfpr.cm.pi.ldap.LoginLDAP;
 
 @Controller
 public class TransacaoController {
 
     private final TransacaoDao tdao;
-    private final UsuarioDao udao;
+    private final LoginLDAP loginLdap;
 
     public TransacaoController() {
+        loginLdap = new LoginLDAP();
         tdao = new TransacaoDao();
-        udao = new UsuarioDao();
+        new UsuarioDao();
     }
 
     @RequestMapping("autorizarCompra")
@@ -31,20 +34,22 @@ public class TransacaoController {
     public String incluirCredito() {
         return "cadastros/formInserirCredito";
     }
-    
+
     @RequestMapping("creditar")
-    public String creditar(Transacao transacao) {
-        
-        UsuarioSistema user = udao.findById(transacao.getUsuario().getId());
-        user.setSaldo(user.getSaldo()+transacao.getQuantidade());
+    public String creditar(Transacao transacao, @PathVariable String senha) {
+
+        UsuarioSistema user = loginLdap.logarNoLDAP(transacao.getUsuario()
+                .getLogin(), senha);
+        user.setSaldo(user.getSaldo() + transacao.getQuantidade());
         return "forward:salvarTransacao";
     }
-    
+
     @RequestMapping("debitar")
-    public String debitar(Transacao transacao) {
-        
-        UsuarioSistema user = udao.findById(transacao.getUsuario().getId());
-        user.setSaldo(user.getSaldo()-transacao.getQuantidade());
+    public String debitar(Transacao transacao, @PathVariable String senha) {
+
+        UsuarioSistema user = loginLdap.logarNoLDAP(transacao.getUsuario()
+                .getLogin(), senha);
+        user.setSaldo(user.getSaldo() - 1);
         return "forward:salvarTransacao";
     }
 

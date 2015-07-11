@@ -58,7 +58,7 @@
 				<label class="col-sm-2 control-label" for="nome">Usuário: </label>
 					<div class="col-sm-4">
 						<input type="text" class="form-control" id="nome" name="nome"
-						value="${usuario.nome}" placeholder="Informe seu Usuário" />
+						value="${usuario.login}" placeholder="Informe seu Usuário" />
 					</div>
 			</div>
 			<div class="form-group">
