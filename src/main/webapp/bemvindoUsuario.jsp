@@ -18,7 +18,7 @@
 	<jsp:include page="includes/menu.jsp" />
 
 	<div id="container">
-		<h1>Seja bem Vindo!!! ${usuario.nome}</h1>
+		<h1>Seja bem Vindo!!!</h1>
 	</div>
 	
 	<jsp:include page="includes/footer.jsp" />

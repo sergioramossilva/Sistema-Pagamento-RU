@@ -46,7 +46,7 @@
 							</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="login" name="login"
-									value="${usuario.login}" placeholder="Informe seu login" />
+									 placeholder="Informe seu login" />
 							</div>
 						</div>
 
@@ -55,7 +55,7 @@
 							</label>
 							<div class="col-sm-8">
 								<input type="password" class="form-control" id="senha"
-									name="senha" value="${usuario.senha}"
+									name="senha" 
 									placeholder="Digite sua senha" />
 							</div>
 						</div>
