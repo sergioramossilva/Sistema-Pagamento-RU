@@ -39,10 +39,7 @@ public class LoginUsuarioServlet extends HttpServlet {
         LoginLDAP ldap = new LoginLDAP();
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
-        UsuarioSistema usuario = ldap.logarNoLDAP("login", "senha");
-        
-        
-     //   System.out.print(usuario.getNome());
+        UsuarioSistema usuario = ldap.logarNoLDAP(login, senha);
         
         if (usuario != null) {
 
@@ -51,7 +48,7 @@ public class LoginUsuarioServlet extends HttpServlet {
             response.sendRedirect("bemvindoUsuario.jsp");
         } else {
 
-            response.sendRedirect("loginInvalido.jsp");
+            response.sendRedirect("loginInvalidoUsuario.jsp");
         }
     }
 }
