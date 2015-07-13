@@ -35,27 +35,23 @@ public class LoginUsuarioServlet extends HttpServlet {
     protected void service(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
 
-     //   LoginLDAP ldap = new LoginLDAP();
-     //   String login = request.getParameter("login");
-     //   String senha = request.getParameter("senha");
-     //   UsuarioSistema usuario = ldap.logarNoLDAP(login, senha);
-        
+    
         LoginLDAP ldap = new LoginLDAP();
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
         UsuarioSistema usuario = ldap.logarNoLDAP("login", "senha");
         
         
-        System.out.print(usuario.getNome());
+     //   System.out.print(usuario.getNome());
         
         if (usuario != null) {
 
             HttpSession sessao = request.getSession(true);
             sessao.setAttribute("usuario", usuario);
             response.sendRedirect("bemvindoUsuario.jsp");
-        } //else {
+        } else {
 
-           // response.sendRedirect("loginInvalido.jsp");
-       // }
+            response.sendRedirect("loginInvalido.jsp");
+        }
     }
 }
