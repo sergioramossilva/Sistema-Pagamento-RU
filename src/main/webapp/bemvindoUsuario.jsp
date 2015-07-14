@@ -24,38 +24,6 @@
 		<h2>Quantidade de refeições = ${usuario.saldo}</h2>
 		
 	</div>
-	<div>
-	
-	<button type="button" class="btn btn-danger">Extrato</button>
-	<table class="table table-striped table-hover">
-			<thead>
-				<tr>
-					<th>Operação</th>
-					<th>Quantidade</th>
-					<th>Data</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${transacao}" var="transacao">
-					<tr>
-						<td>${transacao.tipoTransacao}</td>
-						<td>${transacao.quantidade}</td>
-						<td>${transacao.date}</td>
-						
-						<td>
-						</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="5"><strong>Total de registros:</strong></td>
-				 	<td><strong>${fn:length(transacao)}</strong></td>  
-				</tr>
-			</tfoot>
-		</table>
-	
-	</div>
 	
 	<jsp:include page="includes/footer.jsp" />
 </body>

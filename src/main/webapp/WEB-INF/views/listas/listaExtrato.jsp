@@ -15,7 +15,7 @@
 </head>
 <body>
 
-    <jsp:include page="/includes/menu.jsp" />
+    <jsp:include page="/includes/menuUsuario.jsp" />
 
 	<div class="container">
 
@@ -24,32 +24,33 @@
 		</div>
 
 		<table class="table table-striped table-hover">
-		<thead>
-			<tr>
-				<th>Nome</th>
-				<th>Administrativo</th>
-				<th>Opções</th>
-			</tr>
-		</thead>
-		<tbody>
-		    <c:forEach items="${cargos}" var="cargo">
-		      <tr>
-                <td>${cargo.nome}</td>
-                <td>${cargo.admin ? 'Sim' : 'Não'}</td>
-                <td>
-                <a class="btn btn-warning" href="alterarCargo?id=${cargo.id}">Alterar</a>
-                <a class="btn btn-danger" href="excluirCargo?id=${cargo.id}">Excluir</a>
-                </td>
-              </tr>
-		    </c:forEach>
-		</tbody>
-		<tfoot>
-		  <tr>
-		      <td colspan="2"><strong>Total de registros:</strong></td>
-		       <td><strong>${fn:length(cargos)}</strong></td>  
-		  </tr>
-		</tfoot>
-	</table>
+			<thead>
+				<tr>
+					<th>Operação</th>
+					<th>Quantidade</th>
+					<th>Data</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${transacao}" var="transacao">
+					<tr>
+						<td>${transacao.tipoTransacao}</td>
+						<td>${transacao.quantidade}</td>
+						<td>${transacao.date}</td>
+						
+						<td>
+						</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="5"><strong>Total de registros:</strong></td>
+				 	<td><strong>${fn:length(transacao)}</strong></td>  
+				</tr>
+			</tfoot>
+		</table>
+
 	</div>
 </body>
 </html>

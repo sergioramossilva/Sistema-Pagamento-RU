@@ -72,11 +72,13 @@ public class TransacaoController {
         return "cadastros/formAutorizacaoCompra";
     }
 
-    @RequestMapping("listarTransacoes")
+
+    @RequestMapping("listaExtrato")
     public String lista(Model model) {
         List<Transacao> transacoes = tdao.getAll();
         model.addAttribute("transacoes", transacoes);
-        return "listas/listaTransacoes";
+        return "listas/listaExtrato";
     }
-
+    
+    
 }
