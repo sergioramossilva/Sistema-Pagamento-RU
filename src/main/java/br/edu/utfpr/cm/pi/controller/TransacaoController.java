@@ -1,21 +1,10 @@
 package br.edu.utfpr.cm.pi.controller;
 
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import br.edu.utfpr.cm.pi.beans.Transacao;
-import br.edu.utfpr.cm.pi.beans.UsuarioSistema;
-import br.edu.utfpr.cm.pi.daos.TransacaoDao;
-import br.edu.utfpr.cm.pi.daos.UsuarioDao;
-import br.edu.utfpr.cm.pi.ldap.LoginLDAP;
 
 @Controller
 public class TransacaoController {
-
+/*
     private final TransacaoDao tdao;
     private final LoginLDAP loginLdap;
 
@@ -46,10 +35,14 @@ public class TransacaoController {
 
     @RequestMapping("debitar")
     public String debitar(Transacao transacao, @PathVariable String senha) {
+        String login = request.getParameter("login");
+        String senha = request.getParameter("senha");
+        UsuarioSistema usuario = ldap.logarNoLDAP(login, senha);
 
-        UsuarioSistema user = loginLdap.logarNoLDAP(transacao.getUsuario()
-                .getLogin(), senha);
-        user.setSaldo(user.getSaldo() - 1);
+        if (usuario != null) {
+            
+        usuario.setSaldo(usuario.getSaldo()-1);
+        }
         return "forward:salvarTransacao";
     }
 
@@ -79,4 +72,4 @@ public class TransacaoController {
         return "listas/listaTransacoes";
     }
 
-}
+*/}

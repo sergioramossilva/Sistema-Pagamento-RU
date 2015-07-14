@@ -11,7 +11,6 @@ import javax.servlet.http.HttpSession;
 
 import br.edu.utfpr.cm.pi.beans.UsuarioSistema;
 import br.edu.utfpr.cm.pi.ldap.LoginLDAP;
-import br.edu.utfpr.cm.saa.entidades.Sistema;
 
 @WebServlet(name = "LoginUsuarioServlet", urlPatterns = { "/LoginUsuarioServlet" })
 public class LoginUsuarioServlet extends HttpServlet {
