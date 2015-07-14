@@ -44,9 +44,9 @@
 
 					<form class="form-horizontal" role="form"
 						id="formAutorizacaoCompra" method="post"
-						action="transacaoController">
+						action="/TransacaoServlet">
 
-						<input type="hidden" name="tipo" value="1" />
+						<input type="hidden" id = "tipo" name="tipo" value="1" />
 						
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="login">Login:

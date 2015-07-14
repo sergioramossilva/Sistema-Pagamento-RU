@@ -41,7 +41,7 @@
 				
 				<li class="dropdown">
 				<a
-					href="${pageContext.servletContext.contextPath}/autorizarCompra">Autorização de Compra
+					href="${pageContext.servletContext.contextPath}/TransacaoServlet">Autorização de Compra
 				</a>
 				</li>
 
