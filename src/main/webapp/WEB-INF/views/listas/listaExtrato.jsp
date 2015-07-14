@@ -31,7 +31,7 @@
 					<th>Data</th>
 				</tr>
 			</thead>
-			<tbody>
+		  	<tbody>
 				<c:forEach items="${transacao}" var="transacao">
 					<tr>
 						<td>${transacao.tipoTransacao}</td>

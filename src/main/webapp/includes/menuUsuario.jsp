@@ -11,7 +11,7 @@
 						class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<!-- <li class="dropdown-header">Principais</li> -->
-						<li><a href="listaExtrato">Extrato</a></li>
+						<li><a href="${pageContext.servletContext.contextPath}/listaExtrato">Extrato</a></li>
 					</ul>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">

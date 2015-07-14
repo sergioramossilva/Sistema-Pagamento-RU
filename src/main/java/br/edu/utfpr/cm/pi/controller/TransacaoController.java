@@ -1,10 +1,20 @@
 package br.edu.utfpr.cm.pi.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import antlr.collections.List;
+import br.edu.utfpr.cm.pi.beans.Transacao;
+import br.edu.utfpr.cm.pi.beans.UsuarioSistema;
+import br.edu.utfpr.cm.pi.daos.TransacaoDao;
+import br.edu.utfpr.cm.pi.daos.UsuarioDao;
+import br.edu.utfpr.cm.pi.ldap.LoginLDAP;
 
 @Controller
 public class TransacaoController {
-/*
+
     private final TransacaoDao tdao;
     private final LoginLDAP loginLdap;
 
@@ -72,11 +82,7 @@ public class TransacaoController {
         model.addAttribute("transacoes", transacoes);
         return "listas/listaExtrato";
     }
-<<<<<<< HEAD
-    
+
     
 }
-=======
-
-*/}
 
