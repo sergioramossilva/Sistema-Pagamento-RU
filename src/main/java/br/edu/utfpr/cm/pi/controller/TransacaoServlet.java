@@ -7,8 +7,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import br.edu.utfpr.cm.pi.beans.Funcionario;
+import br.edu.utfpr.cm.pi.beans.Transacao;
 import br.edu.utfpr.cm.pi.beans.UsuarioSistema;
+import br.edu.utfpr.cm.pi.daos.TipoTransacaoDao;
+import br.edu.utfpr.cm.pi.daos.TransacaoDao;
 import br.edu.utfpr.cm.pi.daos.UsuarioDao;
 import br.edu.utfpr.cm.pi.ldap.LoginLDAP;
 
@@ -42,6 +47,10 @@ public class TransacaoServlet extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+
+        Funcionario funcionario = (Funcionario) session.getAttribute("func");
+
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
         LoginLDAP loginLDAP = new LoginLDAP();
@@ -51,15 +60,30 @@ public class TransacaoServlet extends HttpServlet {
         } else if (usuario.getSaldo() == 0) {
             response.sendRedirect("semsaldo.jsp");
         } else {
+            boolean erro = true;
+            Transacao transacao = new Transacao();
+            transacao.setFuncionario(funcionario);
+            TipoTransacaoDao tipoTransacaoDao = new TipoTransacaoDao();
+
             int tipo = Integer.parseInt(request.getParameter("tipo"));
             if (tipo == 0) {
-                double quantidade = Double.parseDouble(request
+                int quantidade = Integer.parseInt(request
                         .getParameter("quantidade"));
                 usuario.setSaldo(usuario.getSaldo() + quantidade);
-                new UsuarioDao().save(usuario);
+                transacao.setQuantidade(quantidade);
+                transacao.setTipoTransacao(tipoTransacaoDao.findById(0L));
+                erro = false;
             } else if (tipo == 1) {
                 usuario.setSaldo(usuario.getSaldo() - 1);
+                transacao.setTipoTransacao(tipoTransacaoDao.findById(0L));
+                transacao.setQuantidade(1);
+                erro = false;
+            }
+
+            if (!erro) {
+                transacao.setUsuario(usuario);
                 new UsuarioDao().save(usuario);
+                new TransacaoDao().save(transacao);
             }
 
         }
