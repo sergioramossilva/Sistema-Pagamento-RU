@@ -44,7 +44,9 @@ public class FuncionarioController {
 
     @RequestMapping("alterarFuncionario")
     public String alterar(Long id, Model model) {
-        model.addAttribute("funcionario", fdao.findById(id));
+        List<Cargo> cargos = cdao.getAll();
+        model.addAttribute("funcionario", fdao.findById(id)); 
+        model.addAttribute("listaCargos", cargos);
         return "cadastros/formFuncionario";
     }
 
