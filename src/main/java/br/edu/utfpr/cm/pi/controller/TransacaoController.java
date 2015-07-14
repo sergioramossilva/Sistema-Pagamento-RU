@@ -74,8 +74,8 @@ public class TransacaoController {
 
     @RequestMapping("listarTransacoes")
     public String lista(Model model) {
-        List<Transacao> transacaos = tdao.getAll();
-        model.addAttribute("transacaos", transacaos);
+        List<Transacao> transacoes = tdao.getAll();
+        model.addAttribute("transacoes", transacoes);
         return "listas/listaTransacoes";
     }
 

@@ -21,14 +21,14 @@
 
 		$("#autorizaCompra").validate({
 			rules : {
-				nome :{ required: true
+				login :{ required: true
 			},
 			senha :{ required: true
 			}
 	},
   		  messages:{
-      		  nome:{
-        		  required: "Digite o seu nome",
+      		  login:{
+        		  required: "Digite o seu login",
 	      },
        		 senha:{
          		 required: "Digite sua senha",
