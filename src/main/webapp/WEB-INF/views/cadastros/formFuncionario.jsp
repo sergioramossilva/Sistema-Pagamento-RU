@@ -95,7 +95,8 @@
 				<label class="col-sm-2 control-label" for="cpf">CPF: </label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="cpf" name="cpf"
-						value="${funcionario.cpf}" placeholder="Informe o cpf" />
+						value="${funcionario.cpf}" placeholder="Informe o cpf" 
+						required="required" maxlength="11" />
 				</div>
 			</div>
 
