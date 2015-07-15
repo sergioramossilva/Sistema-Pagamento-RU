@@ -39,6 +39,7 @@ public class TransacaoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
+        System.out.print("Passei por aqu");
     }
 
     /**

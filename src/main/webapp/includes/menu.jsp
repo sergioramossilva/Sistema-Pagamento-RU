@@ -41,7 +41,7 @@
 				
 				<li class="dropdown">
 				<a
-					href="/cadastros/formAutorizacaoCompra.jsp">Autorização de Compra
+					href="${pageContext.servletContext.contextPath}/autorizaCompra"">Autorização de Compra
 				</a>
 				</li>
 
