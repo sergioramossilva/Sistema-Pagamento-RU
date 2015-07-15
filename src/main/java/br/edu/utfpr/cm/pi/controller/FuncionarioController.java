@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.edu.utfpr.cm.pi.beans.Cargo;
 import br.edu.utfpr.cm.pi.beans.Funcionario;
@@ -31,7 +32,9 @@ public class FuncionarioController {
     }
 
     @RequestMapping("salvarFuncionario")
-    public String salvar(Funcionario funcionario) {
+    public String salvar(Funcionario funcionario, @RequestParam("cg") Long cg) {
+        Cargo cargo = cdao.findById(cg);
+        funcionario.setCargo(cargo);
         fdao.save(funcionario);
         return "forward:listarFuncionarios";
     }
