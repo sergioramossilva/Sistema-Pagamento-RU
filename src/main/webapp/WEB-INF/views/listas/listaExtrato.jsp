@@ -32,7 +32,7 @@
 				</tr>
 			</thead>
 		  	<tbody>
-				<c:forEach items="${transacoes}" var="transacao">
+					<c:forEach items="${transacoes}" var="transacao">
 					<tr>
 						<td>${transacao.tipoTransacao.nome}</td>
 						<td>${transacao.quantidade}</td>

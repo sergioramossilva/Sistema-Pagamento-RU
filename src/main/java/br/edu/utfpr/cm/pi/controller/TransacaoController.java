@@ -21,7 +21,6 @@ import br.edu.utfpr.cm.pi.ldap.LoginLDAP;
 public class TransacaoController {
 
     private final TransacaoDao tdao;
-    private final TipoTransacaoDao tpdao;
     private final LoginLDAP loginLdap;
 
     public TransacaoController() {
