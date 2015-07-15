@@ -32,8 +32,8 @@ public class FuncionarioController {
     }
 
     @RequestMapping("salvarFuncionario")
-    public String salvar(Funcionario funcionario, @RequestParam("cg") Long cg) {
-        Cargo cargo = cdao.findById(cg);
+    public String salvar(Funcionario funcionario, @RequestParam("idCargo") Long idCargo) {
+        Cargo cargo = cdao.findById(idCargo);
         funcionario.setCargo(cargo);
         fdao.save(funcionario);
         return "forward:listarFuncionarios";
