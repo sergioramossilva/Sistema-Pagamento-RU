@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import br.edu.utfpr.cm.pi.utils.FormataData;
+
 @Entity(name = "transacao")
 public class Transacao implements Serializable {
 
@@ -95,6 +97,11 @@ public class Transacao implements Serializable {
                 + ((tipoTransacao == null) ? 0 : tipoTransacao.hashCode());
         result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
         return result;
+    }
+    
+    public String getdataFormatada() {
+        FormataData dataTransacao = new FormataData(data);
+        return dataTransacao.dataFormatada();
     }
 
     @Override

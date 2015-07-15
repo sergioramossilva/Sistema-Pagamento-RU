@@ -32,11 +32,11 @@
 				</tr>
 			</thead>
 		  	<tbody>
-				<c:forEach items="${transacao}" var="transacao">
+				<c:forEach items="${transacoes}" var="transacao">
 					<tr>
-						<td>${transacao.tipoTransacao}</td>
+						<td>${transacao.tipoTransacao.nome}</td>
 						<td>${transacao.quantidade}</td>
-						<td>${transacao.date}</td>
+						<td>${transacao.dataFormatada}</td>
 						
 						<td>
 						</td>
