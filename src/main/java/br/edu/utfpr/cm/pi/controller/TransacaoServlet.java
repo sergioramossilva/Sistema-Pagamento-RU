@@ -3,6 +3,7 @@ package br.edu.utfpr.cm.pi.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -63,9 +64,11 @@ public class TransacaoServlet extends HttpServlet {
             
             PrintWriter out = response.getWriter(); 
             out.print("<html> <script> alert('Você não possui saldo!')</script>"); 
+           
             out.print("</html>"); 
-            out.close(); 
             request.getRequestDispatcher("loginUsuario.jsp").forward(request, response);
+            out.close(); 
+           
             
             // response.sendRedirect("loginUsuario.jsp");
         } else {
@@ -86,6 +89,11 @@ public class TransacaoServlet extends HttpServlet {
                 usuario.setSaldo(usuario.getSaldo() - 1);
                 transacao.setTipoTransacao(tipoTransacaoDao.findById(0L));
                 transacao.setQuantidade(1);
+                
+                request.setAttribute("mensagem", "Débito realizado com sucesso");
+                RequestDispatcher rd = request.getRequestDispatcher("loginUsuario.jsp");
+                rd.forward(request, response);
+              //  request.getRequestDispatcher("loginUsuario.jsp").forward(request, response);
                 erro = false;
             }
 

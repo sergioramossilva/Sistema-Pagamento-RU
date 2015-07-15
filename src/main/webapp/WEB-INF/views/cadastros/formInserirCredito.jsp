@@ -54,7 +54,7 @@
 		</div>
 
 		<form class="form-horizontal" role="form" id="inserirCreditos"
-			method="post" action="creditar">
+			method="post" action="${pageContext.servletContext.contextPath}/TransacaoServlet">
 			
 			<input type="hidden" name="tipo" value="0" />
 			
