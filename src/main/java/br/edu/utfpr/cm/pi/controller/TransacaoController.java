@@ -78,6 +78,12 @@ public class TransacaoController {
         return "cadastros/formAutorizacaoCompra";
     }
     
-    
+/**    @RequestMapping("inserirCredito")
+    public String listaInserirCredito(Model model) {
+        List<Transacao> transacoes = tdao.getAll();
+        model.addAttribute("transacoes", transacoes);
+        return "cadastros/formInserirCredito";
+    }
+ **/   
 }
 

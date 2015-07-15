@@ -35,7 +35,7 @@
 				
 				<li class="dropdown">
 				<a
-					href="${pageContext.servletContext.contextPath}/TransacaoServlet">Inserir Crédito
+					href="${pageContext.servletContext.contextPath}/inserirCredito">Inserir Crédito
 				</a>
 				</li>
 				
