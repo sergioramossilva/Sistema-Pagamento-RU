@@ -35,13 +35,13 @@
 				
 				<li class="dropdown">
 				<a
-					href="${pageContext.servletContext.contextPath}/inserirCredito">Inserir Crédito
+					href="${pageContext.servletContext.contextPath}/TransacaoServlet">Inserir Crédito
 				</a>
 				</li>
 				
 				<li class="dropdown">
 				<a
-					href="${pageContext.servletContext.contextPath}/autorizarCompra">Autorização de Compra
+					href="${pageContext.servletContext.contextPath}/autorizaCompra"">Autorização de Compra
 				</a>
 				</li>
 

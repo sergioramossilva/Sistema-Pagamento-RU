@@ -44,7 +44,7 @@
 
 					<form class="form-horizontal" role="form"
 						id="formAutorizacaoCompra" method="post"
-						action="transacaoServlet">
+						action="${pageContext.servletContext.contextPath}/TransacaoServlet">
 
 						<input type="hidden" id = "tipo" name="tipo" value="1" />
 						
