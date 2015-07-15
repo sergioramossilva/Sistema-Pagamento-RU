@@ -16,12 +16,10 @@
 </head>
 <body>
 
-  	<jsp:include page="includes/menuUsuario.jsp" /> 
+
 
 	<div id="container">
-		<h1>Seja bem Vindo -  ${usuario.nome}</h1>
-		
-		<h2>Quantidade de refeições = ${usuario.saldo}</h2>
+		<h1>Você não possue saldo -  ${usuario.nome}</h1>
 		
 	</div>
 	

@@ -25,4 +25,8 @@
   <session-config>
     <session-timeout>60</session-timeout>
   </session-config>
+  <error-page>  
+        <exception-type>org.apache.shiro.authc.IncorrectCredentialsException</exception-type>  
+        <location>/loginInvalidoUsuario.jsp</location>  
+    </error-page> 
 </web-app>

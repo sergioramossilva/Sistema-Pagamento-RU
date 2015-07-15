@@ -59,7 +59,7 @@ public class TransacaoServlet extends HttpServlet {
         if (usuario == null) {
             response.sendRedirect("loginInvalidoUsuario.jsp");
         } else if (usuario.getSaldo() == 0) {
-            response.sendRedirect("semsaldo.jsp");
+            response.sendRedirect("semSaldo.jsp");
         } else {
             boolean erro = true;
             Transacao transacao = new Transacao();
