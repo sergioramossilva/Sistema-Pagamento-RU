@@ -21,19 +21,19 @@
 
 		$("#inserirCreditos").validate({
 			rules : {
-				cliente : {
+				login : {
 					required : true
 				},
-				refeicao : {
+				quantidade : {
 					required : true,
 					number : true
 				}
 			},
 			messages : {
-				cliente : {
-					required : "Informe o Cliente",
+				login : {
+					required : "Informe o login",
 				},
-				refeicao : {
+				quantidade : {
 					required : "Informe a quantidade de Refeições",
 				}
 			}
@@ -61,10 +61,10 @@
 			<input type="hidden" name="id" value="${transacao.id}" />
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="cliente">Login
-					Cliente: </label>
+				<label class="col-sm-2 control-label" for="login">Login
+					login: </label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="cliente" name="cliente"
+					<input type="text" class="form-control" id="login" name="login"
 						value="${usuario.login}" placeholder="Informe login do cliente" />
 				</div>
 			</div>
@@ -72,8 +72,8 @@
 				<label for="admin" class="col-sm-2 control-label">Nº
 					Refeições: </label>
 				<div class="col-sm-2">
-					<input type="text" class="form-control" name="refeicao"
-						id="refeicao">
+					<input type="text" class="form-control" name="quantidade"
+						id="quantidade">
 				</div>
 			</div>
 			<div class="form-group">
