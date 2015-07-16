@@ -7,14 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.edu.utfpr.cm.pi.beans.Cargo;
-import br.edu.utfpr.cm.pi.beans.Funcionario;
-import br.edu.utfpr.cm.pi.beans.TipoTransacao;
 import br.edu.utfpr.cm.pi.beans.Transacao;
 import br.edu.utfpr.cm.pi.beans.UsuarioSistema;
-import br.edu.utfpr.cm.pi.daos.TipoTransacaoDao;
 import br.edu.utfpr.cm.pi.daos.TransacaoDao;
-import br.edu.utfpr.cm.pi.daos.UsuarioDao;
 import br.edu.utfpr.cm.pi.ldap.LoginLDAP;
 
 @Controller
@@ -26,8 +21,7 @@ public class TransacaoController {
     public TransacaoController() {
         loginLdap = new LoginLDAP();
         tdao = new TransacaoDao();
-        tpdao = new TipoTransacaoDao();
-        new UsuarioDao();
+        
     }
 
     @RequestMapping("autorizarCompra")
