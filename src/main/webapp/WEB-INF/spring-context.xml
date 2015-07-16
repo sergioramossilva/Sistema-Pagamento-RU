@@ -23,4 +23,9 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
+	<mvc:interceptors>
+	<bean class="br.edu.utfpr.cm.pi.filter.ControleSessao" />
+	</mvc:interceptors>
+
 </beans>
+
