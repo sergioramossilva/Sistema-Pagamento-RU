@@ -16,56 +16,84 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
 <script>
-	$.validator.addMethod("cpf", function(value, element) {
-		var cpf = value;
-		cpf = cpf.replace(/[^0-9]+/g, '');
-		var numeros, digitos, soma, i, resultado, digitos_iguais;
-		digitos_iguais = 1;
-		if (cpf.length < 11)
-			if ($(element).val().length == 0)
-				return true;
-			else
-				return false;
+function validarCPF(cpf) {
+	cpf = remove(cpf, ".");
+	cpf = remove(cpf, "-");
 
-		for (i = 0; i < cpf.length - 1; i++) {
-			if (cpf.charAt(i) != cpf.charAt(i + 1)) {
-				digitos_iguais = 0;
-				break;
-			}
-		}
+	if (cpf.length != 11 || cpf == "00000000000" || cpf == "11111111111"
+			|| cpf == "22222222222" || cpf == "33333333333"
+			|| cpf == "44444444444" || cpf == "55555555555"
+			|| cpf == "66666666666" || cpf == "77777777777"
+			|| cpf == "88888888888" || cpf == "99999999999") {
+		window.alert("CPF inválido. \nInforme um CPF válido.");
+		document.getElementById("cpf").value = "";
+		return false;
+	}
 
-		if (!digitos_iguais) {
-			numeros = cpf.substring(0, 9);
-			digitos = cpf.substring(9);
-			soma = 0;
-			for (i = 10; i > 1; i) {
-				soma += numeros.charAt(10 - i) * i;
-			}
-			resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-			if (resultado != digitos.charAt(0))
-				if ($(element).val().length == 0)
-					return true;
-				else
-					return false;
+	soma = 0;
+	for (i = 0; i < 9; i++) {
+		soma += parseInt(cpf.charAt(i)) * (10 - i);
+	}
 
-			numeros = cpf.substring(0, 10);
-			soma = 0;
-			for (i = 11; i > 1; i) {
-				soma += numeros.charAt(11 - i) * i;
-			}
-			resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-			if (resultado != digitos.charAt(1))
-				if ($(element).val().length == 0)
-					return true;
-				else
-					return false;
+	resto = 11 - (soma % 11);
+	if (resto == 10 || resto == 11) {
+		resto = 0;
+	}
+	if (resto != parseInt(cpf.charAt(9))) {
+		window.alert("CPF inválido. \nInforme um CPF válido.");
+		document.getElementById("cpf").value = "";
+		return false;
+	}
 
-			return true;
-		} else if ($(element).val().length == 0)
-			return true;
-		else
-			return false;
-	}, "CPF inválido");
+	soma = 0;
+	for (i = 0; i < 10; i++) {
+		soma += parseInt(cpf.charAt(i)) * (11 - i);
+	}
+	resto = 11 - (soma % 11);
+	if (resto == 10 || resto == 11) {
+		resto = 0;
+	}
+
+	if (resto != parseInt(cpf.charAt(10))) {
+		window.alert("CPF inválido. \nInforme um CPF válido.");
+		document.getElementById("cpf").value = "";
+		return false;
+	}
+
+	return true;
+}
+
+function remove(str, sub) {
+	i = str.indexOf(sub);
+	r = "";
+	if (i == -1)
+		return str;
+	{
+		r += str.substring(0, i) + remove(str.substring(i + sub.length), sub);
+	}
+
+	return r;
+}
+
+function mascara(o, f) {
+	v_obj = o
+	v_fun = f
+	setTimeout("execmascara()", 1)
+}
+
+function execmascara() {
+	v_obj.value = v_fun(v_obj.value)
+}
+
+function cpf_mask(v) {
+	v = v.replace(/\D/g, "") 
+	v = v.replace(/(\d{3})(\d)/, "$1.$2") 
+											
+	v = v.replace(/(\d{3})(\d)/, "$1.$2")
+											
+	v = v.replace(/(\d{3})(\d)/, "$1-$2") 
+	return v
+}
 </script>
 </head>
 <body>
@@ -86,7 +114,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="nome">Nome: </label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="nome" name="nome"
+					<input type="text" class="form-control" id="nome" name="nome" required="required"
 						value="${funcionario.nome}" placeholder="Informe o nome" />
 				</div>
 			</div>
@@ -96,7 +124,8 @@
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="cpf" name="cpf"
 						value="${funcionario.cpf}" placeholder="Informe o cpf" 
-						required="required" maxlength="11" />
+						required="required" maxlength="14" onblur="validarCPF(this.value)" 
+						onkeypress="mascara(this, cpf_mask)"/>
 				</div>
 			</div>
 
@@ -128,7 +157,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="login">Login: </label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="login" name="login"
+					<input type="text" class="form-control" id="login" name="login" required="required"
 						value="${funcionario.login}" placeholder="Informe o login" />
 				</div>
 			</div>
@@ -136,7 +165,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="nome">Senha: </label>
 				<div class="col-sm-4">
-					<input type="password" class="form-control" id="senha" name="senha"
+					<input type="password" class="form-control" id="senha" name="senha" required="required"
 						value="${funcionario.senha}" placeholder="Informe a senha" />
 				</div>
 			</div>
