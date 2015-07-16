@@ -19,4 +19,5 @@
 					href="${pageContext.servletContext.contextPath}/logout.jsp">Sair</a></li>
 			</ul>
 		</div>
+		</div>
 </nav>
