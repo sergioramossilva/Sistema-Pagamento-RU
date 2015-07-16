@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.edu.utfpr.cm.pi.beans.Transacao;
 import br.edu.utfpr.cm.pi.beans.UsuarioSistema;
 import br.edu.utfpr.cm.pi.daos.TransacaoDao;
-import br.edu.utfpr.cm.pi.daos.UsuarioDao;
 import br.edu.utfpr.cm.pi.ldap.LoginLDAP;
 
 @Controller
@@ -22,7 +21,7 @@ public class TransacaoController {
     public TransacaoController() {
         loginLdap = new LoginLDAP();
         tdao = new TransacaoDao();
-        new UsuarioDao();
+        
     }
 
     @RequestMapping("autorizarCompra")

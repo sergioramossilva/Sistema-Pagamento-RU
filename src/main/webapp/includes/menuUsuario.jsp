@@ -14,7 +14,7 @@
 						<li><a href="${pageContext.servletContext.contextPath}/listaExtrato">Extrato</a></li>
 					</ul>
 			</ul>
- 			<ul class="nav navbar-nav navbar-right">
+ 				<ul class="nav navbar-nav navbar-right">
 				<li><a
 					href="${pageContext.servletContext.contextPath}/logout.jsp">Sair</a></li>
 			</ul>
