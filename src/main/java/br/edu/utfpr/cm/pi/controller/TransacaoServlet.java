@@ -94,6 +94,9 @@ public class TransacaoServlet extends HttpServlet {
                 transacao.setQuantidade(quantidade);
                 transacao.setTipoTransacao(tipoTransacaoDao.findById(1L));
                 erro = false;
+                request.setAttribute("mensagem", "Crédito Inserido!");
+                RequestDispatcher rd1 = request.getRequestDispatcher("bemvindo.jsp");
+                rd1.forward(request, response);
             } else if (tipo == 1) {
                 usuario.setSaldo(usuario.getSaldo() - 1);
                 transacao.setTipoTransacao(tipoTransacaoDao.findById(2L));
@@ -102,7 +105,7 @@ public class TransacaoServlet extends HttpServlet {
                 request.setAttribute("mensagem", "Débito realizado com sucesso!");
                 RequestDispatcher rd = request.getRequestDispatcher("loginUsuario.jsp");
 
-                rd.forward(request, response);
+               
                 // request.getRequestDispatcher("loginUsuario.jsp").forward(request,
                 // response);
                 erro = false;

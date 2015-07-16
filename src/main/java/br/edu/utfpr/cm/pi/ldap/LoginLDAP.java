@@ -59,7 +59,7 @@ public class LoginLDAP {
             }
             return null;
         } catch (LDAPException ex) {
-            Logger.getLogger(MainLDAP.class.getName()).log(Level.SEVERE, null,
+            Logger.getLogger(LoginLDAP.class.getName()).log(Level.SEVERE, null,
                     ex);
             return null;
         }
@@ -73,7 +73,9 @@ public class LoginLDAP {
     public UsuarioSistema geraUsuarioDoSistemaAPartirDeLoginNoLDAP(String login) {
         UsuarioSistema usuarioSistema = null;
         try {
+            ldapManager.connect();
             Usuario usuarioLdap = ldapManager.search(login);
+            ldapManager.disconnect();
             UsuarioDao dao = new UsuarioDao();
             usuarioSistema = dao
                     .retornaUsuarioDoSistemaAPartirDeUsuarioDoLdap(usuarioLdap);
@@ -85,7 +87,8 @@ public class LoginLDAP {
                 usuarioSistema.setNome(usuarioLdap.getNome());
                 dao.save(usuarioSistema);
             }
-            if (!usuarioSistema.getNome().equals(usuarioLdap.getNome())) {
+            if (usuarioSistema != null
+                    && !usuarioSistema.getNome().equals(usuarioLdap.getNome())) {
                 usuarioSistema.setNome(usuarioLdap.getNome());
                 dao.save(usuarioSistema);
             }
