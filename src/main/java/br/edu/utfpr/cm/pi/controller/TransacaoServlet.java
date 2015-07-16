@@ -72,13 +72,9 @@ public class TransacaoServlet extends HttpServlet {
             response.sendRedirect("loginInvalidoUsuario.jsp");
         } else if (usuario.getSaldo() == 0) {
 
-            PrintWriter out = response.getWriter();
-            out.print("<html> <script> alert('Você não possui saldo!')</script>");
-
-            out.print("</html>");
-            request.getRequestDispatcher("loginUsuario.jsp").forward(request,
-                    response);
-            out.close();
+            request.setAttribute("mensagemSaldo", "Você não possui saldo!");
+            RequestDispatcher rdn = request.getRequestDispatcher("/autorizaCompra");
+            rdn.forward(request, response);
 
             // response.sendRedirect("loginUsuario.jsp");
         } else {
@@ -103,8 +99,8 @@ public class TransacaoServlet extends HttpServlet {
                 transacao.setQuantidade(1);
 
                 request.setAttribute("mensagem", "Débito realizado com sucesso!");
-                RequestDispatcher rd = request.getRequestDispatcher("loginUsuario.jsp");
-
+                RequestDispatcher rd = request.getRequestDispatcher("/autorizaCompra");
+                rd.forward(request, response);
                
                 // request.getRequestDispatcher("loginUsuario.jsp").forward(request,
                 // response);

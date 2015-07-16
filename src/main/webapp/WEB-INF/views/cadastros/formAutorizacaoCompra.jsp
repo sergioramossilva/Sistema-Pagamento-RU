@@ -33,6 +33,7 @@
 </script>
 </head>
 <body>
+	<jsp:include page="/includes/menu.jsp" />
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 col-md-4 col-md-offset-4">
@@ -46,8 +47,8 @@
 						id="formAutorizacaoCompra" method="post"
 						action="${pageContext.servletContext.contextPath}/TransacaoServlet">
 
-						<input type="hidden" id = "tipo" name="tipo" value="1" />
-						
+						<input type="hidden" id="tipo" name="tipo" value="1" />
+
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="login">Login:
 							</label>
@@ -65,7 +66,13 @@
 									name="senha" placeholder="Digite sua senha" />
 							</div>
 						</div>
-
+						<div class="alert alert-success">
+							<h3>${mensagem}</h3>
+						</div>
+						<div class="alert alert-danger">
+							<h3>${mensagemSaldo}</h3>
+						</div>
+						
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-8">
 								<button type="submit" class="btn btn-primary btn-lg btn-block">Autorizar</button>
