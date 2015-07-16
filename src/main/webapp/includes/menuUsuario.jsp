@@ -14,14 +14,7 @@
 						<li><a href="${pageContext.servletContext.contextPath}/listaExtrato">Extrato</a></li>
 					</ul>
 			</ul>
-			
-			<li class="dropdown">
-				<a
-					href="cadastros/formAutorizacaoCompra.jsp">Autorização de Compra
-				</a>
-				</li>
-			
-			<ul class="nav navbar-nav navbar-right">
+ 			<ul class="nav navbar-nav navbar-right">
 				<li><a
 					href="${pageContext.servletContext.contextPath}/logout.jsp">Sair</a></li>
 			</ul>

@@ -31,6 +31,8 @@
 
 	});
 </script>
+
+<script></script>
 </head>
 <body>
 	<div class="container">
@@ -53,6 +55,7 @@
 									placeholder="Informe seu login" />
 							</div>
 						</div>
+
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="senha">Senha:
 							</label>
@@ -68,16 +71,9 @@
 							</div>
 						</div>
 					</form>
-					<div class="alert alert-success">
-						<h3>${mensagem}</h3>
-					</div>
-					
-					<div class="alert" style="display: none">
-						<a class="close" onclick="$('.alert').hide()">×</a> <strong>Warning!</strong>
-						Best check yo self, you're not looking too good.
-					</div>
-
-					<a href="#" onclick="$('alert').show()">show</a>
+				</div>
+				<div class="alert alert-success">
+					<h3>${mensagem}</h3>
 				</div>
 			</div>
 		</div>

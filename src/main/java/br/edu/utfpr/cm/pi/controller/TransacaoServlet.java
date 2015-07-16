@@ -89,8 +89,7 @@ public class TransacaoServlet extends HttpServlet {
                 usuario.setSaldo(usuario.getSaldo() - 1);
                 transacao.setTipoTransacao(tipoTransacaoDao.findById(0L));
                 transacao.setQuantidade(1);
-                
-                request.setAttribute("mensagem", "Débito realizado com sucesso");
+                request.setAttribute("mensagem", "Débito realizado com sucesso!");
                 RequestDispatcher rd = request.getRequestDispatcher("loginUsuario.jsp");
                 rd.forward(request, response);
               //  request.getRequestDispatcher("loginUsuario.jsp").forward(request, response);
