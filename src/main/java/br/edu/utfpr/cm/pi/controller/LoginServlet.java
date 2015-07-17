@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 
             HttpSession sessao = request.getSession(true);
             sessao.setAttribute("func", funcionario);
-            response.sendRedirect("bemvindo.jsp");
+            response.sendRedirect("views/bemvindo.jsp");
         } else {
 
             response.sendRedirect("loginInvalido.jsp");

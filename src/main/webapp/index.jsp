@@ -6,11 +6,15 @@
 <title>Sistema Pagamento RU - Autenticação</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
 <script>
 	$().ready(function() {
 
@@ -39,14 +43,14 @@
 					</div>
 
 					<form class="form-horizontal" role="form" id="formLogin"
-						method="post" action="LoginServlet">
+						method="post" action="efetuarLogin">
 
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="login">Login:
 							</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="login" name="login"
-									value="${func.login}" placeholder="Informe seu login" />
+									placeholder="Informe seu login" />
 							</div>
 						</div>
 
@@ -55,8 +59,7 @@
 							</label>
 							<div class="col-sm-8">
 								<input type="password" class="form-control" id="senha"
-									name="senha" value="${func.senha}"
-									placeholder="Digite sua senha" />
+									name="senha" placeholder="Digite sua senha" />
 							</div>
 						</div>
 
