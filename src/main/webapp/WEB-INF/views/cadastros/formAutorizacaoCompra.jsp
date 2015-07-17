@@ -32,17 +32,11 @@
 	});
 </script>
 <script type="text/javascript">
-	$(document).ready(function() {
-		$("#success-alert").hide();
-		$("#myWish").click(function showAlert() {
-			$("#success-alert").alert();
-			window.setTimeout(function() {
-				$("#success-alert").alert('close');
-			}, 200);
-		});
-	});
-</script>
-
+function fecharDiv(){
+        window.setTimeout(function () { 
+                    $("#success-alert").alert('close'); }, 2000);               
+}
+</script>  
 
 </head>
 <body>
@@ -79,12 +73,12 @@
 									name="senha" placeholder="Digite sua senha" />
 							</div>
 						</div>
-						<div id="success-alert" class="alert alert-danger">
+						<div class="alert alert-danger">
+							<a class="close" data-dismiss="alert" href="#">&times;</a>
 							<h3>${mensagemSaldo}</h3>
 						</div>
 
-						<div id="alertaSaldo" class="alert alert-success fade in"
-							role="alert">
+						<div id="alertaSaldo" class="alert alert-success fade in" role="alert">
 							<button class="close" data-dismiss="alert"></button>
 							<a class="close" data-dismiss="alert" href="#">&times;</a>
 							<h4>${mensagem}</h4>
@@ -92,15 +86,9 @@
 						</div>
 
 
-						<div class="alert alert-success" id="success-alert">
-							<button type="button" class="close" data-dismiss="alert">x</button>
-							<strong>${mensagem}</strong>
-						</div>
-
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-8">
-								<button onclick="fecharDiv()" type="submit"
-									class="btn btn-primary btn-lg btn-block">Autorizar</button>
+								<button onclick="" type="submit" class="btn btn-primary btn-lg btn-block">Autorizar</button>
 							</div>
 						</div>
 					</form>
