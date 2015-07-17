@@ -71,7 +71,6 @@ public class TransacaoServlet extends HttpServlet {
         if (usuario == null) {
             response.sendRedirect("loginInvalidoUsuario.jsp");
         } else if (usuario.getSaldo() == 0) {
-
             request.setAttribute("mensagemSaldo", "Você não possui saldo!");
             RequestDispatcher rdn = request.getRequestDispatcher("/autorizaCompra");
             rdn.forward(request, response);
