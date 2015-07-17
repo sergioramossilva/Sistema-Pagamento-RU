@@ -18,27 +18,25 @@ public class LoginController {
         dao = new FuncionarioDao();
     }
 
-    @RequestMapping("efetuarLogin")
-    public String efetuarLogin(@RequestParam("login") String login,
-            @RequestParam("senha") String senha, HttpSession session) {
+    @RequestMapping("/efetuarLogin")
+    public String efetuarLogin(Funcionario funcionario, HttpSession session) {
 
-        System.out.println(login);
-        System.out.println(senha);
+        System.out.println(funcionario.getLogin());
+        System.out.println(funcionario.getSenha());
 
-        Funcionario fun = dao.getLogin(login, senha);
+        Funcionario fun = dao.getLogin(funcionario.getLogin(), funcionario.getSenha());
 
         if (fun != null) {
 
             session.setAttribute("func", fun);
             return "bemvindo";
-        } else {
-            return "loginInvalido";
-        }
+        } 
+        return "loginInvalido";
     }
 
-    @RequestMapping("logout")
+    /*@RequestMapping("logout")
     public String logout(HttpSession session) {
         session.invalidate();
         return "redirect:loginForm";
-    }
+    }*/
 }

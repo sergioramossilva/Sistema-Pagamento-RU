@@ -48,7 +48,7 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a
-					href="${pageContext.servletContext.contextPath}/logout">Sair</a></li>
+					href="${pageContext.servletContext.contextPath}/logout.jsp">Sair</a></li>
 			</ul>
 		</div>
 	</div>

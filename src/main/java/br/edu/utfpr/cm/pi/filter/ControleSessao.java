@@ -12,7 +12,7 @@ public class ControleSessao extends HandlerInterceptorAdapter {
             HttpServletResponse response, Object controller) throws Exception {
 
         String uri = request.getRequestURI();
-        boolean sempreAutorizados = uri.endsWith("LoginServlet")
+        boolean sempreAutorizados = uri.endsWith("efetuarLogin")
                 || uri.endsWith("LoginUsuarioServlet")
                 || uri.contains("LoginUsuario");
 
