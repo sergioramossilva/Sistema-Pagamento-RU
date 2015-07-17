@@ -70,13 +70,7 @@ public class TransacaoServlet extends HttpServlet {
 
         if (usuario == null) {
             response.sendRedirect("loginInvalidoUsuario.jsp");
-        } else if (usuario.getSaldo() == 0) {
-            request.setAttribute("mensagemSaldo", "Você não possui saldo!");
-            RequestDispatcher rdn = request.getRequestDispatcher("/autorizaCompra");
-            rdn.forward(request, response);
-
-            // response.sendRedirect("loginUsuario.jsp");
-        } else {
+        }  else {
             boolean erro = true;
             Transacao transacao = new Transacao();
             transacao.setFuncionario(funcionario);
@@ -89,10 +83,17 @@ public class TransacaoServlet extends HttpServlet {
                 transacao.setQuantidade(quantidade);
                 transacao.setTipoTransacao(tipoTransacaoDao.findById(1L));
                 erro = false;
-                request.setAttribute("mensagem", "Crédito Inserido!");
-                RequestDispatcher rd1 = request.getRequestDispatcher("bemvindo.jsp");
-                rd1.forward(request, response);
-            } else if (tipo == 1) {
+               // request.setAttribute("mensagem", "Crédito Inserido!");
+              //  RequestDispatcher rd1 = request.getRequestDispatcher("/loginUsuario");
+              //  rd1.forward(request, response);
+            }else if (usuario.getSaldo() == 0) {
+                request.setAttribute("mensagemSaldo", "Você não possui saldo!");
+                RequestDispatcher rdn = request.getRequestDispatcher("loginUsuario.jsp");
+                rdn.forward(request, response);
+
+                // response.sendRedirect("loginUsuario.jsp");
+            }
+            else if (tipo == 1) {
                 usuario.setSaldo(usuario.getSaldo() - 1);
                 transacao.setTipoTransacao(tipoTransacaoDao.findById(2L));
                 transacao.setQuantidade(1);
